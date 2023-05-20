@@ -1,6 +1,6 @@
 package mainPackage;
 
-public class Player extends PlayerCharacter
+public class Player extends PlayCharacter
 {
     public Player(String name, String imageURL, int health, int x, int y, int width, int height, int frameCount)
     {
