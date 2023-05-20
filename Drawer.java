@@ -1,4 +1,4 @@
-package mainPackage;
+package Ultimatum;
 
 import java.util.*;
 
