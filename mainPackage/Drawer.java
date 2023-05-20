@@ -12,7 +12,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import java.awt.image.BufferedImage;  
+import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImage.*;
 import java.io.*;  
 import javax.imageio.ImageIO;
 
