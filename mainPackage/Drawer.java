@@ -105,7 +105,7 @@ public class Drawer extends JPanel implements KeyListener
     {
         super.paintComponent(g);
         
-        BufferedImage bufferedImage = new BufferedImage(500, 500, TYPE_INT_RGB);
+        BufferedImage bufferedImage = new BufferedImage(500, 500, BufferedImage.TYPE_INT_RGB);
         Graphics2D g2d = bufferedImage.createGraphics();
         //paint using g2d ...
         
