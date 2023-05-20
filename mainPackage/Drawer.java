@@ -34,7 +34,7 @@ public class Drawer extends JPanel implements KeyListener
     
     private boolean[] moves = new boolean[4];
     
-    private ArrayList<Character> sprity = new ArrayList<Character>();
+    private ArrayList<PlayCharacter> sprity = new ArrayList<PlayCharacter>();
     
     public Drawer()
     {
@@ -92,7 +92,7 @@ public class Drawer extends JPanel implements KeyListener
         System.out.println();
     }
     
-    public void addCharacter(Character x)
+    public void addCharacter(PlayCharacter x)
     {
         sprity.add(x);
     }
@@ -104,13 +104,13 @@ public class Drawer extends JPanel implements KeyListener
     {
         super.paintComponent(g);
         
-        for (Character x : sprity)
+        for (PlayCharacter x : sprity)
         {
             if (x instanceof Player)
                 ((Player) x).update(moves);
         }
         
-        for (Character x : sprity)
+        for (PlayCharacter x : sprity)
         {
             g.drawImage(x.getImage(),x.getX(),x.getY(),null);
         }
