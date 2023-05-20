@@ -15,14 +15,14 @@ import javax.swing.JPanel;
 public class Main extends JFrame
 {
     private static final long serialVersionUID = 7148504528835036003L;
-    //BufferStrategy bs;
+    BufferStrategy bs;
     
-//     public Main()
-//     {
-//         createBufferStrategy(2);
-//         bs = this.getBufferStrategy();
+    public Main()
+    {
+        createBufferStrategy(2);
+        bs = this.getBufferStrategy();
         
-//     }
+    }
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             Drawer panel = new Drawer();
