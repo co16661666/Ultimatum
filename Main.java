@@ -26,7 +26,7 @@ public class Main extends JFrame
             
             //Character(String name, String imageURL, int health, int x, int y, int width, int height, int frameCount)
             //Background object
-            panel.addCharacter(new Character("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0, 1280, 720, 1));
+            panel.addCharacter(new PlayerCharacter("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0, 1280, 720, 1));
             //Character1
             panel.addCharacter(new Player("character1", "https://codehs.com/uploads/0e05dd3175993e93acb4426506cbab09", 100, 0, 0, 300, 240, 5));
             
