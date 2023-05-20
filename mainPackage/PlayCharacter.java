@@ -47,7 +47,14 @@ public class PlayCharacter
         
         try
         {
-            URI url = new URI(imageURL);
+            try
+            {
+               URI url = new URI(imageURL);
+            }
+            catch(URISyntaxException e)
+            {
+                e.printStackTrace();
+            }
             img = ImageIO.read(url.toURL());
         }
         catch (IOException e)
