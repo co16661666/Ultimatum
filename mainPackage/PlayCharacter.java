@@ -47,7 +47,7 @@ public class PlayCharacter
         
         try
         {
-            URI::toURL url = new URI::toURL(imageURL);
+            URI url = new URI(imageURL);
             img = ImageIO.read(url);
         }
         catch (IOException e)
