@@ -1,3 +1,5 @@
+package mainPackage;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -6,8 +8,6 @@ import java.awt.image.BufferStrategy;
 import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
-import mainPackage.*;
 
 /**
  * A little driver in case you want a stand-alone application.
