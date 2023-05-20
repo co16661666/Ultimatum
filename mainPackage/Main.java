@@ -16,11 +16,6 @@ public class Main extends JFrame
 {
     private static final long serialVersionUID = 7148504528835036003L;
     
-    public Main()
-    {
-        setDoubleBuffered(true);
-        
-    }
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             Drawer panel = new Drawer();
