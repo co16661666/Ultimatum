@@ -1,4 +1,4 @@
-package mainPackage;
+package Ultimatum;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
