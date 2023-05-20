@@ -1,4 +1,4 @@
-package mainPackage;
+package Ultimatum;
 
 public class Player extends PlayerCharacter
 {
