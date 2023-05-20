@@ -14,6 +14,7 @@ import javax.swing.JPanel;
  */
 public class Main extends JFrame
 {
+    private static final long serialVersionUID = 7148504528835036003L;
     BufferStrategy bs;
     
     public Main()
