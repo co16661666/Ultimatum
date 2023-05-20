@@ -19,7 +19,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
  
-public class Character
+public class PlayCharacter
 {
     private String name;
     private BufferedImage[] image;
