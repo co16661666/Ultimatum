@@ -18,7 +18,7 @@ public class Main extends JFrame
     
     public Main()
     {
-        setDoubleBufferedStrategy(true);
+        setDoubleBuffered(true);
         
     }
     public static void main(String[] args) {
