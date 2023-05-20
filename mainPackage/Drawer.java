@@ -105,10 +105,24 @@ public class Drawer extends JPanel implements KeyListener
     {
         super.paintComponent(g);
         
-        BufferedImage bufferedImage = new BufferedImage(1280, 720, BufferedImage.TYPE_INT_RGB);
-        Graphics2D g2d = bufferedImage.createGraphics();
-        //paint using g2d ...
+//         BufferedImage bufferedImage = new BufferedImage(1280, 720, BufferedImage.TYPE_INT_RGB);
+//         Graphics2D g2d = bufferedImage.createGraphics();
+//         //paint using g2d ...
         
+//         for (PlayCharacter x : sprity)
+//         {
+//             if (x instanceof Player)
+//                 ((Player) x).update(moves);
+//         }
+        
+//         for (PlayCharacter x : sprity)
+//         {
+//             g2d.drawImage(x.getImage(),x.getX(),x.getY(),null);
+//         }
+
+//         Graphics2D g2dComponent = (Graphics2D) g;
+//         g2dComponent.drawImage(bufferedImage, null, 0, 0);
+
         for (PlayCharacter x : sprity)
         {
             if (x instanceof Player)
@@ -117,11 +131,10 @@ public class Drawer extends JPanel implements KeyListener
         
         for (PlayCharacter x : sprity)
         {
-            g2d.drawImage(x.getImage(),x.getX(),x.getY(),null);
+            g.drawImage(x.getImage(),x.getX(),x.getY(),null);
         }
-
-        Graphics2D g2dComponent = (Graphics2D) g;
-        g2dComponent.drawImage(bufferedImage, null, 0, 0);
+        
+        g.drawImage(bufferedImage, null, 0, 0);
         
         repaint();
         revalidate();
