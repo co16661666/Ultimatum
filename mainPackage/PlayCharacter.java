@@ -37,7 +37,7 @@ public class PlayCharacter
     private double health;
     private boolean isAlive;
     
-    public Character(String name, String imageURL, int health, int x, int y, int width, int height, int frameCount)
+    public PlayerCharacter(String name, String imageURL, int health, int x, int y, int width, int height, int frameCount)
     {
         this.name = name;
         this.image = new BufferedImage[frameCount];
