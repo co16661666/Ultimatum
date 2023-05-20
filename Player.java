@@ -1,4 +1,4 @@
-public class Player extends Character
+public class Player extends PlayerCharacter
 {
     public Player(String name, String imageURL, int health, int x, int y, int width, int height, int frameCount)
     {
