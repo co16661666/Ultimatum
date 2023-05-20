@@ -134,8 +134,6 @@ public class Drawer extends JPanel implements KeyListener
             g.drawImage(x.getImage(),x.getX(),x.getY(),null);
         }
         
-        g.drawImage(bufferedImage, null, 0, 0);
-        
         repaint();
         revalidate();
     }
