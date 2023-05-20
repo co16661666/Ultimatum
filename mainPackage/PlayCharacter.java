@@ -48,9 +48,10 @@ public class PlayCharacter
         
         try
         {
+            URI url = null;
             try
             {
-               URI url = new URI(imageURL);
+               url = new URI(imageURL);
             }
             catch(URISyntaxException e)
             {
