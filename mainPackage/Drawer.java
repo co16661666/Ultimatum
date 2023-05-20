@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import java.awt.image.BufferedImage;
-import java.awt.image.BufferedImage.*;
+import java.awt.image.BufferedImage.TYPE_ARGB;
 import java.io.*;  
 import javax.imageio.ImageIO;
 
