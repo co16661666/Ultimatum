@@ -25,22 +25,6 @@ import java.net.URISyntaxException;
 public class PlayCharacter
 {
     private String name;
-    private BufferedImage[] image;
-    
-    private int width;
-    private int height;
-    
-    private int frameCount;
-    private int curFrame;
-    
-    private int x;
-    private int y;
-    private double health;
-    private boolean isAlive;
-    
-    public class PlayCharacter
-{
-    private String name;
     private BufferedImage[][] image;
     
     private int width;
