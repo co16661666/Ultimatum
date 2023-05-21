@@ -27,6 +27,8 @@ public class Player extends PlayCharacter
         {
             yVelocity = 0;
             super.setY(301);
+            
+            xVelocity /= 3;
         }
         
         if (attacks[0])
