@@ -18,8 +18,6 @@ public class Player extends PlayCharacter
         if (super.getY() <= 300)
         {
             moves[0] = false;
-            moves[1] = false;
-            moves[3] = false;
             
             yVelocity += 2;
         }
@@ -53,7 +51,7 @@ public class Player extends PlayCharacter
         if (moves[1])
         {
             //a
-            if (!(xVelocity < -10))
+            if (!(xVelocity < -10) && super.getY() > 300)
                 xVelocity -= 1;
         }
         
@@ -66,7 +64,7 @@ public class Player extends PlayCharacter
         if (moves[3])
         {
             //d
-            if (!(xVelocity > 10))
+            if (!(xVelocity > 10) && super.getY() > 300)
                 xVelocity += 1;
         }
             
