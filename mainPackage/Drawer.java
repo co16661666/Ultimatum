@@ -160,7 +160,7 @@ public class Drawer extends JPanel implements KeyListener
         Toolkit.getDefaultToolkit().sync();
         
         if (System.nanoTime() - prevT  < 1666.7)
-            Thread.sleep(0, System.nanoTime() - prevT);
+            Thread.sleep(0, System.nanoTime() - (int) prevT);
         
         super.paintComponent(g);
         
