@@ -163,7 +163,6 @@ public class Drawer extends JPanel implements KeyListener
         {
             try
             {
-                System.out.println(((int) Math.abs(System.nanoTime() - prevT)) / 1000000);
                 Thread.sleep(((int) Math.abs(System.nanoTime() - prevT)) / 1000000, ((int) Math.abs(System.nanoTime() - prevT)) % 1000000);
             }
             catch (InterruptedException e)
@@ -177,24 +176,6 @@ public class Drawer extends JPanel implements KeyListener
             prevT = System.nanoTime();
         }
         super.paintComponent(g);
-        
-//         BufferedImage bufferedImage = new BufferedImage(1280, 720, BufferedImage.TYPE_INT_RGB);
-//         Graphics2D g2d = bufferedImage.createGraphics();
-//         //paint using g2d ...
-        
-//         for (PlayCharacter x : sprity)
-//         {
-//             if (x instanceof Player)
-//                 ((Player) x).update(moves);
-//         }
-        
-//         for (PlayCharacter x : sprity)
-//         {
-//             g2d.drawImage(x.getImage(),x.getX(),x.getY(),null);
-//         }
-
-//         Graphics2D g2dComponent = (Graphics2D) g;
-//         g2dComponent.drawImage(bufferedImage, null, 0, 0);
 
         for (PlayCharacter x : sprity)
         {
