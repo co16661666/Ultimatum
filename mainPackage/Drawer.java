@@ -160,8 +160,14 @@ public class Drawer extends JPanel implements KeyListener
         Toolkit.getDefaultToolkit().sync();
         
         if (System.nanoTime() - prevT  < 1666.7)
-            Thread.sleep(0, (int) (System.nanoTime() - prevT));
-        
+        {
+            try{
+                Thread.sleep(0, (int) (System.nanoTime() - prevT));
+            }
+            catch (InterruptException e)
+            {
+                System.out.print(e.printStackTrace());
+        }
         super.paintComponent(g);
         
 //         BufferedImage bufferedImage = new BufferedImage(1280, 720, BufferedImage.TYPE_INT_RGB);
