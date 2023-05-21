@@ -24,7 +24,7 @@ public class Main extends JFrame
             //Background object
             panel.addCharacter(new PlayCharacter("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0, 1280, 720, 1, 1));
             //Character1
-            panel.addCharacter(new Player("character0", "https://codehs.com/uploads/adbfb4445089c55146f962cd852eb182", 100, 0, 0, 144, 300, 2, 6));
+            panel.addCharacter(new Player("character0", "https://codehs.com/uploads/14cba35834e0c4b2db1ab584437131ae", 100, 0, 0, 288, 600, 2, 6));
             
             panel.setBackground(Color.BLACK.darker());
             JFrame frame = new JFrame("Ultimatum");
