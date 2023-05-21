@@ -60,13 +60,11 @@ public class Player extends PlayCharacter
             if (!(xVelocity < -10) && super.getY() > ground)
                 xVelocity -= 1;
         }
-        
         if (moves[2])
         {
             //s
             super.setImage(direction, 3);
         }
-        
         if (moves[3])
         {
             //d
