@@ -28,7 +28,7 @@ public class Player extends PlayCharacter
         if (moves[0])
         {
             //w
-            yVelocity += 5;
+            yVelocity -= 5;
         }
         
         if (moves[1])
@@ -50,7 +50,7 @@ public class Player extends PlayCharacter
         }
         
         if (super.getY() < 600)
-            yVelocity -= 2;
+            yVelocity += 2;
             
         super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
