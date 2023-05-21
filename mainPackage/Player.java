@@ -2,9 +2,15 @@ package mainPackage;
 
 public class Player extends PlayCharacter
 {
+    private double xVelocity;
+    private double yVelocity;
+    
     public Player(String name, String imageURL, int health, int x, int y, int width, int height, int frameCountRow, int frameCountCol)
     {
         super(name, imageURL, health, x, y, width, height, frameCountRow, frameCountCol);
+        
+        xVelocity = 0;
+        yVelocity = 0;
     }
     
     public void update(boolean[] moves, boolean[] attacks)
@@ -22,25 +28,31 @@ public class Player extends PlayCharacter
         if (moves[0])
         {
             //w
-            super.setY(super.getY() - 1);
+            yVelocity += 5;
         }
         
         if (moves[1])
         {
             //a
-            super.setX(super.getX() - 1);
+            xVelocity -= 1;
         }
         
         if (moves[2])
         {
             //s
-            super.setY(super.getY() + 1);
+            ;
         }
         
         if (moves[3])
         {
             //d
-            super.setX(super.getX() + 1);
+            xVelocity += 1;
         }
+        
+        if (super.getY > 600)
+            yVelocity -= 2;
+            
+        super.setX(super.getX() + xVelocity);
+        super.setY(super.getY() + yVelocity);
     }
 }
