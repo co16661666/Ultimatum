@@ -140,7 +140,7 @@ public class Drawer extends JPanel implements KeyListener
     
     public void keyTyped(KeyEvent e)
     {
-        System.out.println();
+        ;
     }
     
     public void addCharacter(PlayCharacter x)
