@@ -161,7 +161,7 @@ public class Drawer extends JPanel implements KeyListener
         
         if (System.nanoTime() - prevT  < 1666.7)
         {
-            Thread.sleep(0, (int) (System.nanoTime() - prevT));
+            Thread.sleep(200);
 //             try
 //             {
 //                 System.out.println("sleepy");
