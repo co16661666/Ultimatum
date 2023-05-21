@@ -20,11 +20,11 @@ public class Main extends JFrame
         SwingUtilities.invokeLater(() -> {
             Drawer panel = new Drawer();
             
-            //Character(String name, String imageURL, int health, int x, int y, int width, int height, int frameCount)
+            //Character(String name, String imageURL, int health, int x, int y, int width, int height, int frameCountRow, int frameCountCol)
             //Background object
-            panel.addCharacter(new PlayCharacter("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0, 1280, 720, 1));
+            panel.addCharacter(new PlayCharacter("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0, 1280, 720, 1, 1));
             //Character1
-            panel.addCharacter(new Player("character1", "https://codehs.com/uploads/0e05dd3175993e93acb4426506cbab09", 100, 0, 0, 300, 240, 5));
+            panel.addCharacter(new Player("character0", "https://codehs.com/uploads/adbfb4445089c55146f962cd852eb182", 100, 0, 0, 144, 300, 2, 6));
             
             panel.setBackground(Color.BLACK.darker());
             JFrame frame = new JFrame("Ultimatum");
