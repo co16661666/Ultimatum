@@ -38,11 +38,32 @@ public class PlayCharacter
     private double health;
     private boolean isAlive;
     
-    public PlayCharacter(String name, String imageURL, int health, int x, int y, int width, int height, int frameCount)
+    public class PlayCharacter
+{
+    private String name;
+    private BufferedImage[][] image;
+    
+    private int width;
+    private int height;
+    
+    private int frameCountRow;
+    private int frameCountCol;
+    private int curFrameRow;
+    private int curFrameCol;
+    
+    private int x;
+    private int y;
+    private double health;
+    private boolean isAlive;
+    
+    public PlayCharacter(String name, String imageURL, int health, int x, int y, int width, int height, int frameCountRow, int frameCountCol)
     {
         this.name = name;
-        this.image = new BufferedImage[frameCount];
-        this.curFrame = 0;
+        this.frameCountRow = frameCountRow;
+        this.frameCountCol = frameCountCol;
+        this.image = new BufferedImage[frameCountRow][frameCountCol];
+        this.curFrameRow = 0;
+        this.curFrameCol = 0;
         
         BufferedImage img = null;
         
@@ -65,9 +86,12 @@ public class PlayCharacter
             e.printStackTrace();
         }
         
-        for (int i = 0; i < this.image.length; i++)
+        for (int r = 0; r < this.image.length; r++)
         {
-            this.image[i] = img.getSubimage(i * width, 0, width, height);
+            for (int c = 0; c < this.image[0].length; c++)
+            {
+                this.image[r][c] = img.getSubimage(c * width, r * height, width, height);
+            }
         }
         
         this.health = health;
@@ -82,7 +106,7 @@ public class PlayCharacter
         return name;
     }
     public BufferedImage getImage(){
-        return image[curFrame];
+        return image[curFrameRow][curFrameCol];
     }
     public double getHealth(){
         return health;
