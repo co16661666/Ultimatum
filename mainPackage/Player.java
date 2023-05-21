@@ -38,7 +38,8 @@ public class Player extends PlayCharacter
         if (moves[0])
         {
             //w
-            yVelocity -= 15;
+            if (super.getY() <= 300)
+                yVelocity -= 15;
         }
         
         if (moves[1])
