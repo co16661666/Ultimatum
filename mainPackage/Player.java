@@ -2,9 +2,9 @@ package mainPackage;
 
 public class Player extends PlayCharacter
 {
-    public Player(String name, String imageURL, int health, int x, int y, int width, int height, int frameCount)
+    public Player(String name, String imageURL, int health, int x, int y, int width, int height, int frameCountRow, int frameCountCol)
     {
-        super(name, imageURL, health, x, y, width, height, frameCount);
+        super(name, imageURL, health, x, y, width, height, frameCountRow, frameCountCol);
     }
     
     public void update(boolean[] moves)
