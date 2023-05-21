@@ -15,14 +15,14 @@ public class Player extends PlayCharacter
     
     public void update(boolean[] moves, boolean[] attacks)
     {
-        if (super.getY() <= 400)
+        if (super.getY() <= 300)
         {
             yVelocity += 2;
         }
         else
         {
             yVelocity = 0;
-            super.setY(401);
+            super.setY(301);
         }
         
         if (attacks[0])
@@ -38,7 +38,7 @@ public class Player extends PlayCharacter
         if (moves[0])
         {
             //w
-            yVelocity -= 5;
+            yVelocity -= 15;
         }
         
         if (moves[1])
