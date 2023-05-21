@@ -50,7 +50,14 @@ public class Player extends PlayCharacter
         }
         
         if (super.getY() < 600)
+        {
             yVelocity += 2;
+        }
+        else
+        {
+            yVelocity = 0;
+            super.setY(600);
+        }
             
         super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
