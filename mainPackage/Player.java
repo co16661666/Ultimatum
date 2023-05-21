@@ -55,6 +55,7 @@ public class Player extends PlayCharacter
         }
         else
         {
+            System.out.println("low " + super.getY());
             yVelocity = 0;
             super.setY(600);
         }
