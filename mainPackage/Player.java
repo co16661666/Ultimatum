@@ -28,7 +28,8 @@ public class Player extends PlayCharacter
             yVelocity = 0;
             super.setY(301);
             
-            xVelocity /= 3;
+            if (!moves[1] && !moves[3])
+                xVelocity /= 3;
         }
         
         if (attacks[0])
@@ -52,7 +53,8 @@ public class Player extends PlayCharacter
         if (moves[1])
         {
             //a
-            xVelocity -= 1;
+            if (!(xVelocity < -10))
+                xVelocity -= 1;
         }
         
         if (moves[2])
@@ -64,7 +66,8 @@ public class Player extends PlayCharacter
         if (moves[3])
         {
             //d
-            xVelocity += 1;
+            if (!(xVelocity > 10))
+                xVelocity += 1;
         }
             
         super.setX(super.getX() + (int) xVelocity);
