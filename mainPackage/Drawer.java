@@ -159,6 +159,7 @@ public class Drawer extends JPanel implements KeyListener
     {
         Toolkit.getDefaultToolkit().sync();
         
+        System.out.println(System.nanoTime());
         if (Math.abs(System.nanoTime() - prevT)  < 16660.7)
         {
             System.out.println("fisldkj");
