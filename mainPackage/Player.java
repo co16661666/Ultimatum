@@ -7,8 +7,18 @@ public class Player extends PlayCharacter
         super(name, imageURL, health, x, y, width, height, frameCountRow, frameCountCol);
     }
     
-    public void update(boolean[] moves)
+    public void update(boolean[] moves, boolean[] attacks)
     {
+        if (attacks[0])
+        {
+            //u
+            super.setImage(0,1);
+        }
+        else
+        {
+            super.setImage(0,0);
+        }
+        
         if (moves[0])
         {
             //w
