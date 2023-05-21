@@ -54,7 +54,6 @@ public class Player extends PlayCharacter
                 yVelocity -= 30;
                 moves[0] = false;
         }
-        
         if (moves[1])
         {
             //a
