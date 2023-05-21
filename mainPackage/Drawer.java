@@ -167,6 +167,7 @@ public class Drawer extends JPanel implements KeyListener
             catch (InterruptException e)
             {
                 System.out.print(e.printStackTrace());
+            }
         }
         super.paintComponent(g);
         
