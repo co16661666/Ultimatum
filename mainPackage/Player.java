@@ -49,7 +49,7 @@ public class Player extends PlayCharacter
             xVelocity += 1;
         }
         
-        if (super.getY() <= 500)
+        if (super.getY() <= 400)
         {
             yVelocity += 2;
         }
