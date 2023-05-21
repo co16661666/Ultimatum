@@ -98,9 +98,10 @@ public class PlayCharacter
     public void setName(String name){
         this.name = name;
     }
-    // public void setImage(String image){
-    //     this.image = image;
-    // }
+    public void setImage(int row, int col){
+        curFrameRow = row;
+        curFrameCol = col;
+    }
     public void setHealth(double health){
         this.health = health;
     }
