@@ -57,7 +57,7 @@ public class Player extends PlayCharacter
         {
             System.out.println("low " + super.getY());
             yVelocity = 0;
-            super.setY(400);
+            super.setY(401);
         }
             
         super.setX(super.getX() + (int) xVelocity);
