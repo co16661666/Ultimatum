@@ -5,6 +5,7 @@ public class Player extends PlayCharacter
     private double xVelocity;
     private double yVelocity;
     private int ground;
+    private int direction;
     
     public Player(String name, String imageURL, int health, int x, int y, int width, int height, int frameCountRow, int frameCountCol)
     {
@@ -14,12 +15,16 @@ public class Player extends PlayCharacter
         yVelocity = 0;
         
         ground = 300;
+        
+        direction = 0;
     }
     
     public void update(boolean[] moves, boolean[] attacks)
     {
         if (super.getY() <= ground)
         {
+            super.setImage(0,4);
+            
             moves[0] = false;
             
             yVelocity += 2;
@@ -36,11 +41,11 @@ public class Player extends PlayCharacter
         if (attacks[0])
         {
             //u
-            super.setImage(0,1);
+            super.setImage(direction, 1);
         }
         else
         {
-            super.setImage(0,0);
+            super.setImage(direction, 0);
         }
         
         if (moves[0])
@@ -62,7 +67,7 @@ public class Player extends PlayCharacter
         if (moves[2])
         {
             //s
-            super.setImage(0,3);
+            super.setImage(direction, 3);
         }
         
         if (moves[3])
