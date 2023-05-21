@@ -161,6 +161,7 @@ public class Drawer extends JPanel implements KeyListener
         
         if (System.nanoTime() - prevT  < 166600)
         {
+            System.out.println("fisldkj");
             try
             {
                 System.out.println("sleepy");
