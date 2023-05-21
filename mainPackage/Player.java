@@ -38,7 +38,6 @@ public class Player extends PlayCharacter
         if (moves[0])
         {
             //w
-            super.setY(400);
             yVelocity -= 5;
         }
         
