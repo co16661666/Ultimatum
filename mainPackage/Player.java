@@ -23,8 +23,6 @@ public class Player extends PlayCharacter
     {
         if (super.getY() <= ground)
         {
-            super.setImage(0,4);
-            
             moves[0] = false;
             
             yVelocity += 2;
@@ -76,6 +74,9 @@ public class Player extends PlayCharacter
             if (!(xVelocity > 10) && super.getY() > ground)
                 xVelocity += 1;
         }
+        
+        if (super.getY() <= ground)
+            super.setImage(direction,4);
             
         super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
