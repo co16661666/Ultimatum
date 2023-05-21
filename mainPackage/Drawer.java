@@ -32,7 +32,7 @@ import java.awt.event.KeyListener;
 public class Drawer extends JPanel implements KeyListener
 {
     private static final long serialVersionUID = 7148504528835036003L;
-    private long prevT = 0;
+    private int prevT = 0;
     //public Character bg = new Character("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0);
     
     private boolean[] moves = new boolean[4];
@@ -160,7 +160,7 @@ public class Drawer extends JPanel implements KeyListener
         Toolkit.getDefaultToolkit().sync();
         
         if (System.nanoTime() - prevT  < 1666.7)
-            Thread.sleep(0, System.nanoTime() - (int) prevT);
+            Thread.sleep(0, System.nanoTime() - prevT);
         
         super.paintComponent(g);
         
