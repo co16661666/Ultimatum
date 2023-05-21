@@ -15,6 +15,16 @@ public class Player extends PlayCharacter
     
     public void update(boolean[] moves, boolean[] attacks)
     {
+        if (super.getY() <= 400)
+        {
+            yVelocity += 2;
+        }
+        else
+        {
+            yVelocity = 0;
+            super.setY(401);
+        }
+        
         if (attacks[0])
         {
             //u
@@ -48,17 +58,6 @@ public class Player extends PlayCharacter
         {
             //d
             xVelocity += 1;
-        }
-        
-        if (super.getY() <= 400)
-        {
-            yVelocity += 2;
-        }
-        else
-        {
-            System.out.println("low " + super.getY());
-            yVelocity = 0;
-            super.setY(401);
         }
             
         super.setX(super.getX() + (int) xVelocity);
