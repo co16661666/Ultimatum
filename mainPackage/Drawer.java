@@ -50,8 +50,6 @@ public class Drawer extends JPanel implements KeyListener
     
     public void keyPressed(KeyEvent e)
     {
-        System.out.println(e.getKeyCode());
-        
         if (e.getKeyCode() == 85)
         {
             attacks[0] = true;
@@ -97,8 +95,6 @@ public class Drawer extends JPanel implements KeyListener
     
     public void keyReleased(KeyEvent e)
     {
-        System.out.println(e.getKeyCode());
-        
         if (e.getKeyCode() == 85)
         {
             attacks[0] = false;
