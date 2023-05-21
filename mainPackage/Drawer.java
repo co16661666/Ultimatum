@@ -35,6 +35,7 @@ public class Drawer extends JPanel implements KeyListener
     //public Character bg = new Character("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0);
     
     private boolean[] moves = new boolean[4];
+    private boolean[] attacks = new boolean[6];
     
     private ArrayList<PlayCharacter> sprity = new ArrayList<PlayCharacter>();
     
@@ -49,6 +50,31 @@ public class Drawer extends JPanel implements KeyListener
     public void keyPressed(KeyEvent e)
     {
         System.out.println(e.getKeyCode());
+        
+        if (e.getKeyCode() == 85)
+        {
+            attacks[0] = true;
+        }
+        if (e.getKeyCode() == 73)
+        {
+            attacks[1] = true;
+        }
+        if (e.getKeyCode() == 79)
+        {
+            attacks[2] = true;
+        }
+        if (e.getKeyCode() == 74)
+        {
+            attacks[3] = true;
+        }
+        if (e.getKeyCode() == 75)
+        {
+            attacks[4] = true;
+        }
+        if (e.getKeyCode() == 76)
+        {
+            attacks[5] = true;
+        }
         
         if (e.getKeyCode() == 87)
         {
@@ -71,6 +97,32 @@ public class Drawer extends JPanel implements KeyListener
     public void keyReleased(KeyEvent e)
     {
         System.out.println(e.getKeyCode());
+        
+        if (e.getKeyCode() == 85)
+        {
+            attacks[0] = false;
+        }
+        if (e.getKeyCode() == 73)
+        {
+            attacks[1] = false;
+        }
+        if (e.getKeyCode() == 79)
+        {
+            attacks[2] = false;
+        }
+        if (e.getKeyCode() == 74)
+        {
+            attacks[3] = false;
+        }
+        if (e.getKeyCode() == 75)
+        {
+            attacks[4] = false;
+        }
+        if (e.getKeyCode() == 76)
+        {
+            attacks[5] = false;
+        }
+        
         if (e.getKeyCode() == 87)
         {
             moves[0] = false;
@@ -128,7 +180,7 @@ public class Drawer extends JPanel implements KeyListener
         for (PlayCharacter x : sprity)
         {
             if (x instanceof Player)
-                ((Player) x).update(moves);
+                ((Player) x).update(moves, attacks);
         }
         
         for (PlayCharacter x : sprity)
