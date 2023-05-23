@@ -42,7 +42,12 @@ public class Player extends PlayCharacter
         {
             //u
             combozo.update(keyInputs);
-            super.setImage(direction, 1);
+            
+            if (combozo.checkCombo(4, 54, 57) && !combozo.checkCombo(4, 56, 60) || !combozo.checkCombo(4, 54, 60))
+            {
+                System.out.println("combo");
+                super.setImage(direction, 1);
+            }
         }
         else
         {
