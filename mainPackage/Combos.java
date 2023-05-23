@@ -6,20 +6,10 @@ public class Combos
 {
     private int frameCount;
     private boolean[][] combo = new boolean[60][7];
-    private static ArrayList<Combos> comboList = new ArrayList<Combos>();
   
     public Combos()
     {
         frameCount = 0;
-        comboList.add(this);
-    }
-    
-    public static void updateComboList(boolean[] curKeys)
-    {
-        for (Combos x : comboList)
-        {
-            x.update(curKeys);
-        }
     }
     
     public void update(boolean[] curKeys)
