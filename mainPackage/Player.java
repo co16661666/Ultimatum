@@ -7,6 +7,8 @@ public class Player extends PlayCharacter
     private int ground;
     private int direction;
     
+    private Combos combozo;
+    
     public Player(String name, String imageURL, int health, int x, int y, int width, int height, int frameCountRow, int frameCountCol)
     {
         super(name, imageURL, health, x, y, width, height, frameCountRow, frameCountCol);
@@ -39,6 +41,7 @@ public class Player extends PlayCharacter
         if (keyInputs[4])
         {
             //u
+            combozo.update(keyInputs);
             super.setImage(direction, 1);
         }
         else
