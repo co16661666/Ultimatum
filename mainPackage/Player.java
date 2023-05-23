@@ -19,11 +19,11 @@ public class Player extends PlayCharacter
         direction = 0;
     }
     
-    public void update(boolean[] moves, boolean[] attacks)
+    public void update(boolean[] keyInputs)
     {
         if (super.getY() <= ground)
         {
-            moves[0] = false;
+            keyInputs[0] = false;
             
             yVelocity += 2;
         }
@@ -32,11 +32,11 @@ public class Player extends PlayCharacter
             yVelocity = 0;
             super.setY(ground + 1);
             
-            if (!moves[1] && !moves[3])
+            if (!keyInputs[1] && !keyInputs[3])
                 xVelocity /= 3;
         }
         
-        if (attacks[0])
+        if (keyInputs[4])
         {
             //u
             super.setImage(direction, 1);
@@ -46,26 +46,26 @@ public class Player extends PlayCharacter
             super.setImage(direction, 0);
         }
         
-        if (moves[0])
+        if (keyInputs[0])
         {
             //w
             if (super.getY() <= ground + 1)
                 super.setImage(0,4);
                 yVelocity -= 30;
-                moves[0] = false;
+                keyInputs[0] = false;
         }
-        if (moves[1])
+        if (keyInputs[1])
         {
             //a
             if (!(xVelocity < -10) && super.getY() > ground)
                 xVelocity -= 1;
         }
-        if (moves[2])
+        if (keyInputs[2])
         {
             //s
             super.setImage(direction, 3);
         }
-        if (moves[3])
+        if (keyInputs[3])
         {
             //d
             if (!(xVelocity > 10) && super.getY() > ground)
