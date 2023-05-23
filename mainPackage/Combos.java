@@ -1,3 +1,7 @@
+package mainPackage;
+
+import java.util.ArrayList;
+
 public class Combos
 {
     private int frameCount;
