@@ -50,9 +50,11 @@ public class Player extends PlayCharacter
         {
             //w
             if (super.getY() <= ground + 1)
+            {
                 super.setImage(0,4);
                 yVelocity -= 30;
                 keyInputs[0] = false;
+            }
         }
         if (keyInputs[1])
         {
