@@ -32,4 +32,15 @@ public class Combos
         
         combo[combo.length - 1] = curKeys;
     }
+    
+    public boolean checkCombo(int key, rangeStart, rangeEnd)
+    {
+        for (int i = rangeStart; i < rangeEnd; i++)
+        {
+            if (combo[i][key])
+                return true;
+            
+            return false;
+        }
+    }
 }
