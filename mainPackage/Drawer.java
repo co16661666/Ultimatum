@@ -53,23 +53,23 @@ public class Drawer extends JPanel implements KeyListener
         {
             keyInputs[4] = true;
         }
-        if (e.getKeyCode() == 73)
+        else if (e.getKeyCode() == 73)
         {
             keyInputs[5] = true;
         }
-        if (e.getKeyCode() == 79)
+        else if (e.getKeyCode() == 79)
         {
             keyInputs[6] = true;
         }
-        if (e.getKeyCode() == 74)
+        else if (e.getKeyCode() == 74)
         {
             keyInputs[7] = true;
         }
-        if (e.getKeyCode() == 75)
+        else if (e.getKeyCode() == 75)
         {
             keyInputs[8] = true;
         }
-        if (e.getKeyCode() == 76)
+        else if (e.getKeyCode() == 76)
         {
             keyInputs[9] = true;
         }
