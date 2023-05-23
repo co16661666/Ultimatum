@@ -11,12 +11,12 @@ public class Combos
     public Combos()
     {
         frameCount = 0;
-        allCom.add(this);
+        comboList.add(this);
     }
     
-    public static updateComboList(boolean[] curKeys)
+    public static void updateComboList(boolean[] curKeys)
     {
-        for (boolean x : comboList)
+        for (Combos x : comboList)
         {
             x.update(curKeys);
         }
