@@ -25,8 +25,9 @@ public class Combos
         {
             for (boolean y : x)
             {
-                System.out.println(y);
+                System.out.print(y + " ");
             }
+            System.out.println();
         }
     }
     
