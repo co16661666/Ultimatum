@@ -1,11 +1,11 @@
 package mainPackage;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Combos
 {
     private int frameCount;
-    private boolean[][] combo = new boolean[60][7];
+    private boolean[][] combo = new boolean[60][10];
   
     public Combos()
     {
@@ -14,12 +14,13 @@ public class Combos
     
     public void update(boolean[] curKeys)
     {
+        System.out.println("updating combos");
         for (int i = 1; i < 60; i++)
         {
             combo[i - 1] = combo[i];
         }
         
-        combo[combo.length - 1] = curKeys;
+        combo[combo.length - 1] = Arrays.copyOf(curKeys, 10);
     }
     
     public boolean[][] getCombo()
