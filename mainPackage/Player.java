@@ -25,6 +25,8 @@ public class Player extends PlayCharacter
     
     public void update(boolean[] keyInputs)
     {
+        combozo.update(keyInputs);
+        
         if (super.getY() <= ground)
         {
             keyInputs[0] = false;
@@ -43,8 +45,6 @@ public class Player extends PlayCharacter
         if (keyInputs[4])
         {
             //u
-            combozo.update(keyInputs);
-            
             if (combozo.checkCombo(4, 54, 57) && !combozo.checkCombo(4, 56, 60) || !combozo.checkCombo(4, 54, 60))
             {
                 System.out.println("combo");
