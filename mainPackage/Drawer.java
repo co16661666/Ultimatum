@@ -154,11 +154,11 @@ public class Drawer extends JPanel implements KeyListener
     {
         Toolkit.getDefaultToolkit().sync();
         
-        if (Math.abs(System.nanoTime() - prevT)  < 16670000 * 100)
+        if (Math.abs(System.nanoTime() - prevT)  < 16670000)
         {
             try
             {
-                Thread.sleep(((int) Math.abs(System.nanoTime() - prevT)) / 1000000 * 100, ((int) Math.abs(System.nanoTime() - prevT)) % 1000000);
+                Thread.sleep(((int) Math.abs(System.nanoTime() - prevT)) / 1000000, ((int) Math.abs(System.nanoTime() - prevT)) % 1000000);
             }
             catch (InterruptedException e)
             {
