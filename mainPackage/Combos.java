@@ -29,6 +29,7 @@ public class Combos
             }
             System.out.println();
         }
+        System.out.println();
     }
     
     public boolean checkCombo(int key, int rangeStart, int rangeEnd)
