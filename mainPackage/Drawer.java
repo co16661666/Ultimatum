@@ -33,6 +33,7 @@ public class Drawer extends JPanel implements KeyListener
 {
     private static final long serialVersionUID = 7148504528835036003L;
     private long prevT = 0L;
+    public long frame = 0;
     //public Character bg = new Character("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0);
     
     private boolean[] keyInputs = new boolean[10];
@@ -170,6 +171,9 @@ public class Drawer extends JPanel implements KeyListener
         {
             prevT = System.nanoTime();
         }
+        
+        frame++;
+        System.out.println(frame);
         super.paintComponent(g);
 
         for (PlayCharacter x : sprity)
