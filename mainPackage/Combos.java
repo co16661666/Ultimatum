@@ -21,6 +21,13 @@ public class Combos
         }
         
         combo[combo.length - 1] = curKeys;
+        for (boolean[] x : combo)
+        {
+            for (boolean y : x)
+            {
+                System.out.println(y);
+            }
+        }
     }
     
     public boolean checkCombo(int key, int rangeStart, int rangeEnd)
