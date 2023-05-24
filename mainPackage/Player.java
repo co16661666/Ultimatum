@@ -19,6 +19,8 @@ public class Player extends PlayCharacter
         ground = 300;
         
         direction = 0;
+        
+        combozo = new Combos();
     }
     
     public void update(boolean[] keyInputs)
