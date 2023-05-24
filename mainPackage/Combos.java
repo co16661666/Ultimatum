@@ -16,8 +16,7 @@ public class Combos
     {
         for (int i = 1; i < 60; i++)
         {
-            boolean[] temp = combo[i];
-            combo[i - 1] = temp;
+            combo[i - 1] = combo[i];
         }
         
         combo[combo.length - 1] = curKeys;
