@@ -27,7 +27,7 @@ public class Player extends PlayCharacter
     {
         combozo.update(keyInputs);
         
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 60; i++)
         {
             for (int j = 0; j < 7; j++)
             {
