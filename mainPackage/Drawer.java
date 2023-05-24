@@ -35,8 +35,7 @@ public class Drawer extends JPanel implements KeyListener
     private long prevT = 0L;
     //public Character bg = new Character("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0);
     
-    private boolean[] moves = new boolean[4];
-    private boolean[] attacks = new boolean[6];
+    private boolean[] keyInputs = new boolean[10]
     
     private ArrayList<PlayCharacter> sprity = new ArrayList<PlayCharacter>();
     
@@ -52,44 +51,44 @@ public class Drawer extends JPanel implements KeyListener
     {
         if (e.getKeyCode() == 85)
         {
-            attacks[0] = true;
+            keyInputs[4] = true;
         }
-        if (e.getKeyCode() == 73)
+        else if (e.getKeyCode() == 73)
         {
-            attacks[1] = true;
+            keyInputs[5] = true;
         }
-        if (e.getKeyCode() == 79)
+        else if (e.getKeyCode() == 79)
         {
-            attacks[2] = true;
+            keyInputs[6] = true;
         }
-        if (e.getKeyCode() == 74)
+        else if (e.getKeyCode() == 74)
         {
-            attacks[3] = true;
+            keyInputs[7] = true;
         }
-        if (e.getKeyCode() == 75)
+        else if (e.getKeyCode() == 75)
         {
-            attacks[4] = true;
+            keyInputs[8] = true;
         }
-        if (e.getKeyCode() == 76)
+        else if (e.getKeyCode() == 76)
         {
-            attacks[5] = true;
+            keyInputs[9] = true;
         }
         
         if (e.getKeyCode() == 87)
         {
-            moves[0] = true;
+            keyInputs[0] = true;
         }
         if (e.getKeyCode() == 65)
         {
-            moves[1] = true;
+            keyInputs[1] = true;
         }
         if (e.getKeyCode() == 83)
         {
-            moves[2] = true;
+            keyInputs[2] = true;
         }
         if (e.getKeyCode() == 68)
         {
-            moves[3] = true;
+            keyInputs[3] = true;
         }
     }
     
@@ -97,44 +96,44 @@ public class Drawer extends JPanel implements KeyListener
     {
         if (e.getKeyCode() == 85)
         {
-            attacks[0] = false;
+            keyInputs[4] = false;
         }
         if (e.getKeyCode() == 73)
         {
-            attacks[1] = false;
+            keyInputs[5] = false;
         }
         if (e.getKeyCode() == 79)
         {
-            attacks[2] = false;
+            keyInputs[6] = false;
         }
         if (e.getKeyCode() == 74)
         {
-            attacks[3] = false;
+            keyInputs[7] = false;
         }
         if (e.getKeyCode() == 75)
         {
-            attacks[4] = false;
+            keyInputs[8] = false;
         }
         if (e.getKeyCode() == 76)
         {
-            attacks[5] = false;
+            keyInputs[9] = false;
         }
         
         if (e.getKeyCode() == 87)
         {
-            moves[0] = false;
+            keyInputs[0] = false;
         }
         if (e.getKeyCode() == 65)
         {
-            moves[1] = false;
+            keyInputs[1] = false;
         }
         if (e.getKeyCode() == 83)
         {
-            moves[2] = false;
+            keyInputs[2] = false;
         }
         if (e.getKeyCode() == 68)
         {
-            moves[3] = false;
+            keyInputs[3] = false;
         }
     }
     
