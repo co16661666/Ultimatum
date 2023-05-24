@@ -21,16 +21,6 @@ public class Combos
         }
         
         combo[combo.length - 1] = curKeys;
-        
-        for (int i = 0; i < 60; i++)
-        {
-            for (int j = 0; j < 7; j++)
-            {
-                System.out.print(combo[i][j] + " ");
-            }
-            System.out.println();
-        }
-        System.out.println();
     }
     
     public boolean[][] getCombo()
