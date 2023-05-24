@@ -27,16 +27,6 @@ public class Player extends PlayCharacter
     {
         combozo.update(keyInputs);
         
-        for (int i = 0; i < 60; i++)
-        {
-            for (int j = 0; j < 7; j++)
-            {
-                System.out.print(combozo.getCombo()[i][j] + " ");
-            }
-            System.out.println();
-        }
-        System.out.println();
-        
         if (super.getY() <= ground)
         {
             keyInputs[0] = false;
@@ -54,6 +44,7 @@ public class Player extends PlayCharacter
         
         if (keyInputs[4])
         {
+            
             //u
             if (combozo.checkCombo(4, 54, 57) && !combozo.checkCombo(4, 56, 60) || !combozo.checkCombo(4, 54, 60))
             {
