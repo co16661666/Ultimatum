@@ -23,7 +23,7 @@ public class Combos
         combo[combo.length - 1] = curKeys;
     }
     
-    public boolean checkCombo(int key, rangeStart, rangeEnd)
+    public boolean checkCombo(int key, int rangeStart, int rangeEnd)
     {
         for (int i = rangeStart; i < rangeEnd; i++)
         {
