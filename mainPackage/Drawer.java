@@ -175,7 +175,7 @@ public class Drawer extends JPanel implements KeyListener
         for (PlayCharacter x : sprity)
         {
             if (x instanceof Player)
-                ((Player) x).update(moves, attacks);
+                ((Player) x).update(keyInputs);
         }
         
         for (PlayCharacter x : sprity)
