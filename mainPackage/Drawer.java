@@ -35,7 +35,7 @@ public class Drawer extends JPanel implements KeyListener
     private long prevT = 0L;
     //public Character bg = new Character("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0);
     
-    private boolean[] keyInputs = new boolean[10]
+    private boolean[] keyInputs = new boolean[10];
     
     private ArrayList<PlayCharacter> sprity = new ArrayList<PlayCharacter>();
     
