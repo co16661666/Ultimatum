@@ -33,6 +33,11 @@ public class Combos
         System.out.println();
     }
     
+    public boolean[][] getCombo()
+    {
+        return combo;
+    }
+    
     public boolean checkCombo(int key, int rangeStart, int rangeEnd)
     {
         for (int i = rangeStart; i < rangeEnd; i++)
