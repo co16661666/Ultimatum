@@ -29,8 +29,8 @@ public class Combos
         {
             if (combo[i][key])
                 return true;
-            
-            return false;
         }
+        
+        return false;
     }
 }
