@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Combos
 {
     private int frameCount;
-    private boolean[][] combo = new boolean[60][7];
+    private boolean[][] combo = new boolean[100][7];
   
     public Combos()
     {
@@ -14,7 +14,7 @@ public class Combos
     
     public void update(boolean[] curKeys)
     {
-        for (int i = 1; i < 60; i++)
+        for (int i = 1; i < 100; i++)
         {
             combo[i - 1] = combo[i];
         }
