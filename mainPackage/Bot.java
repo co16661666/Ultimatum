@@ -1,3 +1,5 @@
+package mainPackage;
+
 public class Bot extends Player
 {
     public Bot(String name, String imageURL, int health, int x, int y, int width, int height, int frameCountRow, int frameCountCol)
