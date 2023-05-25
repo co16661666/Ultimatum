@@ -153,8 +153,10 @@ public class Drawer extends JPanel implements KeyListener
      */
     public void paintComponent(Graphics g)
     {
+        //Syncs the os so that the movements are smoother*
         Toolkit.getDefaultToolkit().sync();
         
+        //This is to ensure that the framerate is capped at 60 FPS, so it will delay the program and wait to draw until 1/60 th of a second has passed
         if (Math.abs(System.nanoTime() - prevT)  < 16670000)
         {
             try
@@ -172,21 +174,27 @@ public class Drawer extends JPanel implements KeyListener
             prevT = System.nanoTime();
         }
         
+        //Increase the current frame number by one
         frame++;
         System.out.println(frame);
+        
+        //Calls the JComponent paintComponent method
         super.paintComponent(g);
-
+        
+        //Runs update for all applicable objects that can be drawn
         for (PlayCharacter x : sprity)
         {
             if (x instanceof Player)
                 ((Player) x).update(keyInputs);
         }
         
+        //Iterates through all objects, and displays them to the screen.
         for (PlayCharacter x : sprity)
         {
             g.drawImage(x.getImage(),x.getX(),x.getY(),null);
         }
         
+        //Paints the image so the user can see it, then calls this method again to loop
         repaint();
         revalidate();
     }
