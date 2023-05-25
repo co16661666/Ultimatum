@@ -25,7 +25,7 @@ public class Player extends PlayCharacter
     
     public void update(boolean[] keyInputs)
     {
-        combozo.update(keyInputs);
+        //combozo.update(keyInputs);
         
         for (int i = 0; i < 60; i++)
         {
@@ -59,11 +59,13 @@ public class Player extends PlayCharacter
             {
                 System.out.println("combo");
                 super.setImage(direction, 1);
+                keyInputs[4] = false;
             }
         }
         else
         {
             super.setImage(direction, 0);
+            keyInputs[4] = false;
         }
         
         if (keyInputs[0])
@@ -96,6 +98,8 @@ public class Player extends PlayCharacter
         
         if (super.getY() <= ground)
             super.setImage(direction,4);
+            
+        combozo.update(keyInputs);
             
         super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
