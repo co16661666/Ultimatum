@@ -40,6 +40,7 @@ public class PlayCharacter
     private double health;
     private boolean isAlive;
     
+    //default constructor 
     public PlayCharacter(String name, String imageURL, int health, int x, int y, int width, int height, int frameCountRow, int frameCountCol)
     {
         this.name = name;
@@ -51,6 +52,7 @@ public class PlayCharacter
         
         BufferedImage img = null;
         
+        //displays the image from a url
         try
         {
             URI url = null;
@@ -69,7 +71,7 @@ public class PlayCharacter
             System.out.println("You FAILURE :)");
             e.printStackTrace();
         }
-        
+        //iterates through arraylist of all images and prints each one
         for (int r = 0; r < this.image.length; r++)
         {
             for (int c = 0; c < this.image[0].length; c++)
@@ -86,42 +88,44 @@ public class PlayCharacter
         if(health>0)
             isAlive = true;
     }
-    public String getName(){
+
+    public String getName()//getter method which returns the String name
+    {
         return name;
     }
-    public BufferedImage getImage(){
+    public BufferedImage getImage(){//returns the image which is printed
         return image[curFrameRow][curFrameCol];
     }
-    public double getHealth(){
+    public double getHealth(){//returns the health returned as a double
         return health;
     }
-    public void setName(String name){
+    public void setName(String name){//sets the name by taking a String input
         this.name = name;
     }
-    public void setImage(int row, int col){
+    public void setImage(int row, int col){//sets the image by taking 2 ints which serve as the position in a 2d array
         curFrameRow = row;
         curFrameCol = col;
     }
-    public void setHealth(double health){
+    public void setHealth(double health){//sets the health by taking in a double input
         this.health = health;
     }
-    public void takeDamage(double damage){
+    public void takeDamage(double damage){//subtracts the damage taken from the total health and also checks to see if the health is greater than 0
         health -= damage;
         if(health <= 0){
             isAlive = false;
         }
     }
     
-    public int getX(){
+    public int getX(){//returns the X position which is an int value
         return x;
     }
-    public int getY(){
+    public int getY(){//returns the y position which is an int value
         return y;
     }
-    public void setX(int x){
+    public void setX(int x){//sets the x position of the image with an int input
         this.x = x;
     }
-    public void setY(int y){
+    public void setY(int y){//sets the y position of the image with an int input 
         this.y = y;
     }
 }
