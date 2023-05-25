@@ -59,7 +59,6 @@ public class Player extends PlayCharacter
             {
                 System.out.println("combo");
                 super.setImage(direction, 1);
-                keyInputs[4] = false;
             }
         }
         else
