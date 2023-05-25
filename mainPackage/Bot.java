@@ -5,10 +5,10 @@ public class Bot extends Player
         super(name, imageURL, health, x, y, width, height, frameCountRow, frameCountCol);
     }
     
-    @Override
-    public void update(Player other)
-    {
-        boolean[] moves = new boolean[10];
-        super.update(keys)
-    }
+//     @Override
+//     public void update(Player other)
+//     {
+//         boolean[] moves = new boolean[10];
+//         super.update(keys)
+//     }
 }
