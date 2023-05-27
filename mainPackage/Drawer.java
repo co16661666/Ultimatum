@@ -32,22 +32,27 @@ import java.awt.event.KeyListener;
 public class Drawer extends JPanel implements KeyListener
 {
     private static final long serialVersionUID = 7148504528835036003L;
+    
+    //setup for timing frames
     private long prevT = 0L;
     public long frame = 0;
-    //public Character bg = new Character("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0);
     
+    //creates array of keyInputs
     private boolean[] keyInputs = new boolean[10];
     
+    //creates ArrayList of all objects that will be drawn
     private ArrayList<PlayCharacter> sprity = new ArrayList<PlayCharacter>();
     
     public Drawer()
     {
+        //setting up key inputs
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(true);
         setDoubleBuffered(true);
     }
     
+    //sets respective items in keyInputs to true when a key is pressed
     public void keyPressed(KeyEvent e)
     {
         if (e.getKeyCode() == 85)
@@ -176,7 +181,7 @@ public class Drawer extends JPanel implements KeyListener
         
         //Increase the current frame number by one
         frame++;
-        System.out.println(frame);
+        //System.out.println(frame);
         
         //Calls the JComponent paintComponent method
         super.paintComponent(g);
@@ -184,7 +189,9 @@ public class Drawer extends JPanel implements KeyListener
         //Runs update for all applicable objects that can be drawn
         for (PlayCharacter x : sprity)
         {
-            if (x instanceof Player)
+            if (x instanceof Bot)
+                ((Bot) x).update((Player) sprity.get(1));
+            else if (x instanceof Player)
                 ((Player) x).update(keyInputs);
         }
         
