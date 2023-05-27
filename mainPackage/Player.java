@@ -32,7 +32,7 @@ public class Player extends PlayCharacter
         
         for (int i = 0; i < 60; i++)
         {
-            System.out.println(i + " ");
+            System.out.print(i + ": ");
             
             for (int j = 0; j < 7; j++)
             {
