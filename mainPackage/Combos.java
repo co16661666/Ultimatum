@@ -14,7 +14,7 @@ public class Combos
     
     public void update(boolean[] curKeys)
     {
-        System.out.println("updating combos");
+        //System.out.println("updating combos");
         for (int i = 1; i < 60; i++)
         {
             combo[i - 1] = combo[i];
