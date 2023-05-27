@@ -61,9 +61,9 @@ public class Player extends PlayCharacter
         if (keyInputs[4])
         {
             //u
-            if (combozo.checkCombo(4, 50, 56) && !combozo.checkCombo(4, 56, 60) || !combozo.checkCombo(4, 50, 59))
+            if (combozo.checkCombo(4, 50, 56) && !combozo.checkCombo(4, 56, 59) || !combozo.checkCombo(4, 50, 59))
             {
-                if (combozo.checkCombo(4, 50, 56) && !combozo.checkCombo(4, 56, 60))
+                if (combozo.checkCombo(4, 50, 56) && !combozo.checkCombo(4, 56, 59))
                     System.out.println("combo");
                 if(direction == 0)
                     super.setImage(direction, 1);
