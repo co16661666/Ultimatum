@@ -99,6 +99,7 @@ public class Player extends PlayCharacter
             else if (!(xVelocity < -10) && super.getY() > ground)
             {
                 xVelocity -= 1;
+                curMove = "walk";
             }
         }
         if (keyInputs[2])
@@ -110,7 +111,10 @@ public class Player extends PlayCharacter
         {
             //d
             if (!(xVelocity > 10) && super.getY() > ground)
+            {
                 xVelocity += 1;
+                curMove = "walk";
+            }
         }
         
         if (super.getY() <= ground)
