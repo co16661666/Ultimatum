@@ -144,6 +144,12 @@ public class Player extends PlayCharacter
             }
             
         }
+        
+        if (curMove.equals("walk"))
+        {
+            if (curStage % 2 == 0)
+                super.setImage(direction + 3, 3);
+        }
             
         super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
