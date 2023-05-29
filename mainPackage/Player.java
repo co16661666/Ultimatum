@@ -83,16 +83,6 @@ public class Player extends PlayCharacter
                 curMoveDuration = 0;
                 super.setImage(direction, 0);
             }
-            
-            if (curMove.equals("lightPunch"))
-            {
-                if (curMoveStage < 4)
-                    super.setImage(direction, curMoveStage);
-                else if (curMoveStage == 4)
-                    super.setImage(direction, 3);
-                else
-                    super.setImage(direction, 8 - curMoveStage);
-            }
         }
         
         if (keyInputs[0])
@@ -147,6 +137,16 @@ public class Player extends PlayCharacter
         }
         
         combozo.update(keyInputs);
+        
+        if (curMove.equals("lightPunch"))
+        {
+            if (curMoveStage < 4)
+                super.setImage(direction, curMoveStage);
+            else if (curMoveStage == 4)
+                super.setImage(direction, 3);
+            else
+                super.setImage(direction, 8 - curMoveStage);
+        }
             
         super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
