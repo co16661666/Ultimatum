@@ -68,7 +68,7 @@ public class Player extends PlayCharacter
         if (keyInputs[4])
         {
             //u
-            if (!combozo.checkCombo(4, 50, 59))
+            if (combozo.checkCombo(4, 50, 56) && !combozo.checkCombo(4, 53, 59) || !combozo.checkCombo(4, 50, 59))
             {
                 curMove = "lightPunch";
                 curMoveStage = 0;
