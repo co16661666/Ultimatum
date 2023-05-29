@@ -83,10 +83,7 @@ public class Player extends PlayCharacter
             //w
             if (super.getY() <= ground + 1)
             {
-                if(direction == 0)
-                    super.setImage(0,3);
-                else
-                    super.setImage(1,1);
+                super.setImage(direction + 3, 2);
                 yVelocity -= 30;
                 keyInputs[0] = false;
             }
