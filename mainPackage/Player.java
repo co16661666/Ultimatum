@@ -164,7 +164,9 @@ public class Player extends PlayCharacter
         {
             if (curMoveStage % 2 == 0)
                 super.setImage(direction + 3, 3);
-            curMoveStage++;
+                
+            if (curMoveStage % 10 == 0)
+                curMoveStage++;
         }
             
         super.setX(super.getX() + (int) xVelocity);
