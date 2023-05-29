@@ -67,9 +67,10 @@ public class Player extends PlayCharacter
                     super.setImage(direction, 1);
                 else
                     super.setImage(direction,4);
-                
-                if (combozo.checkCombo(4, 58,59))
-                    keyInputs[4] = false;
+            }
+            else
+            {
+                super.setImage(direction, 0);
             }
         }
         else
