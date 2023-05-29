@@ -120,10 +120,7 @@ public class Player extends PlayCharacter
         
         if (super.getY() <= ground)
         {
-            if(direction == 0)
-                super.setImage(direction,3);
-            else
-                super.setImage(direction,1);
+            super.setImage(direction + 3, 2);
         }
         
         combozo.update(keyInputs);
