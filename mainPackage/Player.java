@@ -37,17 +37,17 @@ public class Player extends PlayCharacter
     
     public void update(boolean[] keyInputs)
     {
-        for (int i = 0; i < 60; i++)
-        {
-            System.out.print(i + ": ");
+//         for (int i = 0; i < 60; i++)
+//         {
+//             System.out.print(i + ": ");
             
-            for (int j = 0; j < 7; j++)
-            {
-                System.out.print(combozo.getCombo()[i][j] + " ");
-            }
-            System.out.println();
-        }
-        System.out.println();
+//             for (int j = 0; j < 7; j++)
+//             {
+//                 System.out.print(combozo.getCombo()[i][j] + " ");
+//             }
+//             System.out.println();
+//         }
+//         System.out.println();
         
         if (super.getY() <= ground)
         {
@@ -140,6 +140,8 @@ public class Player extends PlayCharacter
         
         if (curMove.equals("lightPunch"))
         {
+            System.out.println("punching");
+            
             if (curMoveStage < 4)
                 super.setImage(direction, curMoveStage);
             else if (curMoveStage == 4)
