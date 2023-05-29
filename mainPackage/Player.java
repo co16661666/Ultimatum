@@ -167,7 +167,7 @@ public class Player extends PlayCharacter
             if (curMoveStage % 2 == 0)
                 super.setImage(direction + 3, 3);
                 
-            if (timer % 10 == 0)
+            if (timer % 5 == 0)
                 curMoveStage++;
             
             timer++;
