@@ -100,7 +100,6 @@ public class Player extends PlayCharacter
             {
                 xVelocity -= 1;
             }
-            direction = 0;
         }
         if (keyInputs[2])
         {
@@ -112,7 +111,6 @@ public class Player extends PlayCharacter
             //d
             if (!(xVelocity > 10) && super.getY() > ground)
                 xVelocity += 1;
-            direction = 1;
         }
         
         if (super.getY() <= ground)
