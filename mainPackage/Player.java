@@ -101,6 +101,10 @@ public class Player extends PlayCharacter
                 xVelocity -= 1;
                 curMove = "walk";
             }
+            else if (curMove == "walk")
+            {
+                curMove = "none";
+            }
         }
         if (keyInputs[2])
         {
@@ -114,6 +118,10 @@ public class Player extends PlayCharacter
             {
                 xVelocity += 1;
                 curMove = "walk";
+            }
+            else if (curMove == "walk")
+            {
+                curMove = "none";
             }
         }
         
