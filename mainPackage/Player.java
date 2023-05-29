@@ -60,7 +60,7 @@ public class Player extends PlayCharacter
         {
             yVelocity = 0;
             super.setY(ground + 1);
-            
+            super.setImage(direction, 0);
             if (!keyInputs[1] && !keyInputs[3])
                 xVelocity /= 3;
         }
