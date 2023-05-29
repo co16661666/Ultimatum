@@ -76,7 +76,7 @@ public class Player extends PlayCharacter
                 if (combozo.checkCombo(4, 50, 56) && !combozo.checkCombo(4, 56, 59))
                     System.out.println("combo");
             }
-            else if (curMoveStage > 8)
+            else if (curMoveStage > 7)
             {
                 curMove = "none";
                 curMoveStage = 0;
