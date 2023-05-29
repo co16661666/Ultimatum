@@ -91,6 +91,8 @@ public class Player extends PlayCharacter
         if (keyInputs[1])
         {
             //a
+            curMove = "walk";
+            
             if (/*super.getY() > ground && combozo.checkCombo(1, 50, 59)*/!combozo.checkCombo(1, 59, 60))
             {
                 System.out.println("dash");
@@ -99,13 +101,13 @@ public class Player extends PlayCharacter
             else if (!(xVelocity < -10) && super.getY() > ground)
             {
                 xVelocity -= 1;
-                curMove = "walk";
-            }
-            else if (curMove == "walk")
-            {
-                curMove = "none";
             }
         }
+        else if (curMove == "walk")
+        {
+            curMove = "none";
+        }
+        
         if (keyInputs[2])
         {
             //s
@@ -114,15 +116,16 @@ public class Player extends PlayCharacter
         if (keyInputs[3])
         {
             //d
+            curMove = "walk";
+            
             if (!(xVelocity > 10) && super.getY() > ground)
             {
                 xVelocity += 1;
-                curMove = "walk";
-            }
-            else if (curMove == "walk")
-            {
-                curMove = "none";
-            }
+            } 
+        }
+        else if (curMove == "walk")
+        {
+            curMove = "none";
         }
         
         if (super.getY() <= ground)
