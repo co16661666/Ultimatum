@@ -76,13 +76,6 @@ public class Player extends PlayCharacter
                 if (combozo.checkCombo(4, 50, 56) && !combozo.checkCombo(4, 56, 59))
                     System.out.println("combo");
             }
-            else if (curMoveStage > 7)
-            {
-                curMove = "none";
-                curMoveStage = 0;
-                curMoveDuration = 0;
-                super.setImage(direction, 0);
-            }
         }
         
         if (keyInputs[0])
@@ -149,7 +142,18 @@ public class Player extends PlayCharacter
             else
                 super.setImage(direction, 8 - curMoveStage);
             
-            curMoveStage++;
+            if (!(curMoveStage == curMoveDuration))
+            {
+                curMoveStage++;
+            }
+            else
+            {
+                curMove = "none";
+                curMoveDuration = 0;
+                curMoveStage = 0;
+                super.setImage(direction, 0);
+            }
+            
         }
             
         super.setX(super.getX() + (int) xVelocity);
