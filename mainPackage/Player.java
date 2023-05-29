@@ -137,6 +137,17 @@ public class Player extends PlayCharacter
         
         combozo.update(keyInputs);
         
+        if (curMove.equals("walk"))
+        {
+            if (curMoveStage % 2 == 0)
+                super.setImage(direction + 3, 3);
+                
+            if (timer % 10 == 0)
+                curMoveStage++;
+            
+            timer++;
+        }
+        
         if (curMove.equals("lightPunch"))
         {
             System.out.println("punching");
@@ -160,17 +171,6 @@ public class Player extends PlayCharacter
                 super.setImage(direction, 0);
             }
             
-        }
-        
-        if (curMove.equals("walk"))
-        {
-            if (curMoveStage % 2 == 0)
-                super.setImage(direction + 3, 3);
-                
-            if (timer % 10 == 0)
-                curMoveStage++;
-            
-            timer++;
         }
             
         super.setX(super.getX() + (int) xVelocity);
