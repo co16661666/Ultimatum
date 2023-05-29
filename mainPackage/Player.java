@@ -10,6 +10,11 @@ public class Player extends PlayCharacter
     private int direction;
     private int yBox;
     private int xBox;
+    
+    private String curMove;
+    private int curMoveStage;
+    private int curMoveDuration;
+    
     private Combos combozo;
     
     public Player(String name, String imageURL, int health, int x, int y, int width, int height, int frameCountRow, int frameCountCol)
@@ -18,6 +23,10 @@ public class Player extends PlayCharacter
         
         xVelocity = 0;
         yVelocity = 0;
+        
+        curMove = "none";
+        curMoveStage = 0;
+        curMoveDuration = 0;
         
         ground = 300;
         
@@ -61,21 +70,29 @@ public class Player extends PlayCharacter
             //u
             if (combozo.checkCombo(4, 50, 56) && !combozo.checkCombo(4, 56, 59) || !combozo.checkCombo(4, 50, 59))
             {
+                curMove = "lightPunch";
+                curMoveStage = 0;
+                curMoveDuration = 8;
                 if (combozo.checkCombo(4, 50, 56) && !combozo.checkCombo(4, 56, 59))
                     System.out.println("combo");
-                if(direction == 0)
-                    super.setImage(direction, 1);
-                else
-                    super.setImage(direction, 3);
             }
             else
             {
+                curMove = "none";
+                curMoveStage = 0;
+                curMoveDuration = 0;
                 super.setImage(direction, 0);
             }
-        }
-        else
-        {
-            super.setImage(direction, 0);
+            
+            if (curMove.equals("lightPunch"))
+            {
+                if (curMoveStage < 4)
+                    super.setImage(direction, curMoveStage);
+                else if (curMoveStage == 4)
+                    super.setImage(direction, 3);
+                else
+                    super.setImage(direction, 8 - curMoveStage);
+            }
         }
         
         if (keyInputs[0])
