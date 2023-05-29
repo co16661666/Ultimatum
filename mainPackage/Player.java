@@ -105,10 +105,7 @@ public class Player extends PlayCharacter
         if (keyInputs[2])
         {
             //s
-            if(direction == 0)
-                super.setImage(direction, 3);
-            else
-                super.setImage(direction, 2);
+            super.setImage(direction + 3, 1);
         }
         if (keyInputs[3])
         {
