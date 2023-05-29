@@ -66,7 +66,7 @@ public class Player extends PlayCharacter
                 if(direction == 0)
                     super.setImage(direction, 1);
                 else
-                    super.setImage(direction,4);
+                    super.setImage(direction, 3);
             }
             else
             {
@@ -84,7 +84,7 @@ public class Player extends PlayCharacter
             if (super.getY() <= ground + 1)
             {
                 if(direction == 0)
-                    super.setImage(0,4);
+                    super.setImage(0,3);
                 else
                     super.setImage(1,1);
                 yVelocity -= 30;
@@ -124,7 +124,7 @@ public class Player extends PlayCharacter
         if (super.getY() <= ground)
         {
             if(direction == 0)
-                super.setImage(direction,4);
+                super.setImage(direction,3);
             else
                 super.setImage(direction,1);
         }
