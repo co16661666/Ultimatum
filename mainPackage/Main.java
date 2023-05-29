@@ -26,7 +26,7 @@ public class Main extends JFrame
             //creating object for background
             panel.addCharacter(new PlayCharacter("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0, 1280, 720, 1, 1));
             //creates the character that the user will play
-            panel.addCharacter(new Player("character0", "https://codehs.com/uploads/092f9cdddfc942d63c7f2ff28f317d65", 100, 0, 0, 330, 324, 9, 5));
+            panel.addCharacter(new Player("character0", "https://codehs.com/uploads/092f9cdddfc942d63c7f2ff28f317d65", 100, 0, 0, 330, 324, 4, 8));
             //creates the character that the user will face off again
             ///panel.addCharacter(new Bot("character1", "https://codehs.com/uploads/14cba35834e0c4b2db1ab584437131ae", 100, 0, 0, 288, 600, 2, 6));
             
