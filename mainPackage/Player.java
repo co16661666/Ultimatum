@@ -80,6 +80,19 @@ public class Player extends PlayCharacter
             }
         }
         
+        if (keyInputs[5])
+        {
+            //u
+            if (combozo.checkCombo(5, 48, 52) && !combozo.checkCombo(5, 52, 59) || !combozo.checkCombo(5, 48, 59))
+            {
+                curMove = "heavyPunch";
+                curMoveStage = 0;
+                curMoveDuration = 10;
+                if (combozo.checkCombo(5, 48, 52) && !combozo.checkCombo(5, 52, 59))
+                    System.out.println("combo");
+            }
+        }
+        
         if (keyInputs[0])
         {
             //w
@@ -150,7 +163,7 @@ public class Player extends PlayCharacter
         
         if (curMove.equals("lightPunch"))
         {
-            System.out.println("punching");
+            System.out.println("lightPunching");
             
             if (curMoveStage < 4)
                 super.setImage(direction, curMoveStage);
@@ -170,7 +183,30 @@ public class Player extends PlayCharacter
                 curMoveStage = 0;
                 super.setImage(direction, 0);
             }
+        }
+        
+        if (curMove.equals("heavyPunch"))
+        {
+            System.out.println("heavyPunching");
             
+            if (curMoveStage < 5)
+                super.setImage(direction + 1, curMoveStage);
+            else if (curMoveStage == 5)
+                super.setImage(direction, 3);
+            else
+                super.setImage(direction + 1, 10 - curMoveStage);
+            
+            if (!(curMoveStage == curMoveDuration))
+            {
+                curMoveStage++;
+            }
+            else
+            {
+                curMove = "none";
+                curMoveDuration = 0;
+                curMoveStage = 0;
+                super.setImage(direction, 0);
+            }
         }
             
         super.setX(super.getX() + (int) xVelocity);
