@@ -75,6 +75,7 @@ public class Player extends PlayCharacter
                 curMove = "lightPunch";
                 curMoveStage = 0;
                 curMoveDuration = 8;
+                combozo.update("neutral");
             }
         }
         
@@ -86,6 +87,7 @@ public class Player extends PlayCharacter
                 curMove = "heavyPunch";
                 curMoveStage = 0;
                 curMoveDuration = 10;
+                combozo.update("neutral");
             }
         }
         
@@ -96,6 +98,7 @@ public class Player extends PlayCharacter
                 curMove = "kick";
                 curMoveStage = 0;
                 curMoveDuration = 18;
+                combozo.update("neutral");
             }
         }
         
