@@ -30,7 +30,7 @@ public class Combos
         return false;
     }
     
-    public String stage()
+    public String getStage()
     {
         return stage;
     }
