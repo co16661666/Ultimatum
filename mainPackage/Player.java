@@ -227,10 +227,10 @@ public class Player extends PlayCharacter
             
             if (curMoveStage < 8)
                 super.setImage(direction + 2, curMoveStage / 2);
-            else if (curMoveStage < 10)
+            else if (curMoveStage < 12)
                 super.setImage(direction + 3, 0);
             else
-                super.setImage(direction + 2, 9 - (curMoveStage / 2));
+                super.setImage(direction + 2, 8 - (curMoveStage / 2));
             
             if (!(curMoveStage == curMoveDuration))
             {
