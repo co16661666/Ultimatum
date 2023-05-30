@@ -165,8 +165,6 @@ public class Player extends PlayCharacter
         
         if (curMove.equals("lightPunch"))
         {
-            System.out.println("lightPunching");
-            
             if (curMoveStage < 4)
             {
                 super.setImage(direction, curMoveStage);
@@ -199,8 +197,6 @@ public class Player extends PlayCharacter
         
         if (curMove.equals("heavyPunch"))
         {
-            System.out.println("heavyPunching");
-            
             if (curMoveStage < 4)
             {
                 super.setImage(direction + 1, curMoveStage);
@@ -233,8 +229,6 @@ public class Player extends PlayCharacter
         
         if (curMove.equals("kick"))
         {
-            System.out.println("kick");
-            
             if (curMoveStage < 8)
             {
                 super.setImage(direction + 2, curMoveStage / 2);
@@ -264,7 +258,9 @@ public class Player extends PlayCharacter
                 combozo.update("neutral");
             }
         }
-            
+        
+        System.out.println(combozo.getStage());
+        
         super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
     }
