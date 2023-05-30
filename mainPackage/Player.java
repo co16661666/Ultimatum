@@ -189,9 +189,9 @@ public class Player extends PlayCharacter
         {
             System.out.println("heavyPunching");
             
-            if (curMoveStage < 5)
+            if (curMoveStage < 4)
                 super.setImage(direction + 1, curMoveStage);
-            else if (curMoveStage == 5)
+            else if (curMoveStage < 7)
                 super.setImage(direction, 3);
             else
                 super.setImage(direction + 1, 10 - curMoveStage);
