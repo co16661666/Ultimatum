@@ -11,6 +11,8 @@ public class Combos
     public Combos()
     {
         frameCount = 0;
+        
+        stage = "neutral";
     }
     
     public void update(String stage)
