@@ -25,7 +25,7 @@ public class Combos
         if (stage.equals("stunned"))
             return false;
         
-        if (type.equals("light") && stage.equals("recovery") || type.equals("heavy") && stage.equals("neutral"))
+        if (type.equals("light") && (stage.equals("recovery") || stage.equals("neutral")) || type.equals("heavy") && stage.equals("neutral"))
             return true;
         return false;
     }
