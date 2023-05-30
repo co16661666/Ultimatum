@@ -192,7 +192,7 @@ public class Player extends PlayCharacter
             if (curMoveStage < 4)
                 super.setImage(direction + 1, curMoveStage);
             else if (curMoveStage < 7)
-                super.setImage(direction, 3);
+                super.setImage(direction + 1, 3);
             else
                 super.setImage(direction + 1, 10 - curMoveStage);
             
