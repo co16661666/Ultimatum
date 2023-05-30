@@ -225,7 +225,7 @@ public class Player extends PlayCharacter
         {
             System.out.println("kick");
             
-            if (curMoveStage < 8)
+            if (curMoveStage < 6)
                 super.setImage(direction + 2, curMoveStage / 2);
             else if (curMoveStage < 10)
                 super.setImage(direction + 3, 0);
