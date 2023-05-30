@@ -99,7 +99,7 @@ public class Player extends PlayCharacter
             {
                 curMove = "kick";
                 curMoveStage = 0;
-                curMoveDuration = 20;
+                curMoveDuration = 18;
                 if (combozo.checkCombo(7, 48, 52) && !combozo.checkCombo(7, 52, 59))
                     System.out.println("combo");
             }
