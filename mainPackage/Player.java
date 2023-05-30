@@ -95,12 +95,12 @@ public class Player extends PlayCharacter
         
         if (keyInputs[7])
         {
-            if (combozo.checkCombo(5, 48, 52) && !combozo.checkCombo(5, 52, 59) || !combozo.checkCombo(5, 39, 59))
+            if (combozo.checkCombo(7, 48, 52) && !combozo.checkCombo(7, 52, 59) || !combozo.checkCombo(7, 39, 59))
             {
                 curMove = "kick";
                 curMoveStage = 0;
                 curMoveDuration = 20;
-                if (combozo.checkCombo(5, 48, 52) && !combozo.checkCombo(5, 52, 59))
+                if (combozo.checkCombo(7, 48, 52) && !combozo.checkCombo(7, 52, 59))
                     System.out.println("combo");
             }
         }
