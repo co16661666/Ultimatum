@@ -103,6 +103,7 @@ public class Player extends PlayCharacter
                 if (combozo.checkCombo(5, 48, 52) && !combozo.checkCombo(5, 52, 59))
                     System.out.println("combo");
             }
+        }
         
         if (keyInputs[0])
         {
