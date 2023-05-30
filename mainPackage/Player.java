@@ -149,8 +149,6 @@ public class Player extends PlayCharacter
             super.setImage(direction + 3, 2);
         }
         
-        combozo.update(keyInputs);
-        
         if (curMove.equals("walk"))
         {
             if (curMoveStage % 2 == 0)
@@ -266,10 +264,5 @@ public class Player extends PlayCharacter
             
         super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
-    }
-    
-    public boolean[][] getCombo()
-    {
-        return combozo.getCombo();
     }
 }
