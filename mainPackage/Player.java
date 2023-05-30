@@ -93,6 +93,17 @@ public class Player extends PlayCharacter
             }
         }
         
+        if (keyInputs[7])
+        {
+            if (combozo.checkCombo(5, 48, 52) && !combozo.checkCombo(5, 52, 59) || !combozo.checkCombo(5, 39, 59))
+            {
+                curMove = "kick";
+                curMoveStage = 0;
+                curMoveDuration = 20;
+                if (combozo.checkCombo(5, 48, 52) && !combozo.checkCombo(5, 52, 59))
+                    System.out.println("combo");
+            }
+        
         if (keyInputs[0])
         {
             //w
@@ -195,6 +206,30 @@ public class Player extends PlayCharacter
                 super.setImage(direction + 1, 3);
             else
                 super.setImage(direction + 1, 10 - curMoveStage);
+            
+            if (!(curMoveStage == curMoveDuration))
+            {
+                curMoveStage++;
+            }
+            else
+            {
+                curMove = "none";
+                curMoveDuration = 0;
+                curMoveStage = 0;
+                super.setImage(direction, 0);
+            }
+        }
+        
+        if (curMove.equals("kick"))
+        {
+            System.out.println("kick");
+            
+            if (curMoveStage < 8)
+                super.setImage(direction + 2, curMoveStage / 2);
+            else if (curMoveStage < 10)
+                super.setImage(direction + 3, 0);
+            else
+                super.setImage(direction + 2, 10 - (curMoveStage / 2));
             
             if (!(curMoveStage == curMoveDuration))
             {
