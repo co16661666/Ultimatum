@@ -26,7 +26,10 @@ public class Combos
             return false;
         
         if (type.equals("light") && (stage.equals("recovery") || stage.equals("neutral")) || type.equals("heavy") && stage.equals("neutral"))
+        {
+            stage = "neutral";
             return true;
+        }
         return false;
     }
     
