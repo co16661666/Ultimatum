@@ -77,6 +77,8 @@ public class Player extends PlayCharacter
                 curMoveDuration = 8;
                 combozo.update("neutral");
             }
+            
+            keyInputs[4] = false;
         }
         
         if (keyInputs[5])
@@ -89,6 +91,8 @@ public class Player extends PlayCharacter
                 curMoveDuration = 10;
                 combozo.update("neutral");
             }
+            
+            keyInputs[5] = false;
         }
         
         if (keyInputs[7])
@@ -100,6 +104,8 @@ public class Player extends PlayCharacter
                 curMoveDuration = 18;
                 combozo.update("neutral");
             }
+            
+            keyInputs[7] = false;
         }
         
         if (keyInputs[0])
