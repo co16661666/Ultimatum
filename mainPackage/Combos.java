@@ -5,37 +5,36 @@ import java.util.*;
 public class Combos
 {
     private int frameCount;
-    private boolean[][] combo = new boolean[60][10];
+    
+    private String stage;
   
     public Combos()
     {
         frameCount = 0;
-    }
-    
-    public void update(boolean[] curKeys)
-    {
-        //System.out.println("updating combos");
-        for (int i = 1; i < 60; i++)
-        {
-            combo[i - 1] = combo[i];
-        }
         
-        combo[combo.length - 1] = Arrays.copyOf(curKeys, 10);
+        stage = "neutral";
     }
     
-    public boolean[][] getCombo()
+    public void update(String stage)
     {
-        return combo;
+        this.stage = stage;
     }
     
-    public boolean checkCombo(int key, int rangeStart, int rangeEnd)
+    public boolean checkCanMove(String type)
     {
-        for (int i = rangeStart; i < rangeEnd; i++)
-        {
-            if (combo[i][key])
-                return true;
-        }
+        if (stage.equals("stunned"))
+            return false;
         
+        if (type.equals("light") && (stage.equals("recovery") || stage.equals("neutral")) || type.equals("heavy") && stage.equals("neutral"))
+        {
+            stage = "neutral";
+            return true;
+        }
         return false;
+    }
+    
+    public String getStage()
+    {
+        return stage;
     }
 }

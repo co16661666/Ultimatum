@@ -70,38 +70,36 @@ public class Player extends PlayCharacter
         if (keyInputs[4])
         {
             //u
-            if (combozo.checkCombo(4, 50, 56) && !combozo.checkCombo(4, 53, 59) || !combozo.checkCombo(4, 50, 59))
+            if (combozo.checkCanMove("light"))
             {
                 curMove = "lightPunch";
                 curMoveStage = 0;
                 curMoveDuration = 8;
-                if (combozo.checkCombo(4, 50, 56) && !combozo.checkCombo(4, 56, 59))
-                    System.out.println("combo");
+                combozo.update("neutral");
             }
         }
         
         if (keyInputs[5])
         {
-            //u
-            if (combozo.checkCombo(5, 48, 52) && !combozo.checkCombo(5, 52, 59) || !combozo.checkCombo(5, 48, 59))
+            //i
+            if (combozo.checkCanMove("heavy"))
             {
                 curMove = "heavyPunch";
                 curMoveStage = 0;
                 curMoveDuration = 10;
-                if (combozo.checkCombo(5, 48, 52) && !combozo.checkCombo(5, 52, 59))
-                    System.out.println("combo");
+                combozo.update("neutral");
             }
         }
         
         if (keyInputs[7])
         {
-            if (combozo.checkCombo(7, 48, 52) && !combozo.checkCombo(7, 52, 59) || !combozo.checkCombo(7, 39, 59))
+            //j
+            if (combozo.checkCanMove("heavy"))
             {
                 curMove = "kick";
                 curMoveStage = 0;
                 curMoveDuration = 18;
-                if (combozo.checkCombo(7, 48, 52) && !combozo.checkCombo(7, 52, 59))
-                    System.out.println("combo");
+                combozo.update("neutral");
             }
         }
         
@@ -120,12 +118,7 @@ public class Player extends PlayCharacter
             //a
             curMove = "walk";
             
-            if (/*super.getY() > ground && combozo.checkCombo(1, 50, 59)*/!combozo.checkCombo(1, 59, 60))
-            {
-                System.out.println("dash");
-                xVelocity -= 30;
-            }
-            else if (!(xVelocity < -10) && super.getY() > ground)
+            if (!(xVelocity < -10) && super.getY() > ground)
             {
                 xVelocity -= 1;
             }
@@ -160,8 +153,6 @@ public class Player extends PlayCharacter
             super.setImage(direction + 3, 2);
         }
         
-        combozo.update(keyInputs);
-        
         if (curMove.equals("walk"))
         {
             if (curMoveStage % 2 == 0)
@@ -175,14 +166,21 @@ public class Player extends PlayCharacter
         
         if (curMove.equals("lightPunch"))
         {
-            System.out.println("lightPunching");
-            
             if (curMoveStage < 4)
+            {
                 super.setImage(direction, curMoveStage);
+                combozo.update("startup");
+            }
             else if (curMoveStage == 4)
+            {
                 super.setImage(direction, 3);
+                combozo.update("active");
+            }
             else
+            {
                 super.setImage(direction, 8 - curMoveStage);
+                combozo.update("recovery");
+            }
             
             if (!(curMoveStage == curMoveDuration))
             {
@@ -194,19 +192,27 @@ public class Player extends PlayCharacter
                 curMoveDuration = 0;
                 curMoveStage = 0;
                 super.setImage(direction, 0);
+                combozo.update("neutral");
             }
         }
         
         if (curMove.equals("heavyPunch"))
         {
-            System.out.println("heavyPunching");
-            
             if (curMoveStage < 4)
+            {
                 super.setImage(direction + 1, curMoveStage);
+                combozo.update("startup");
+            }
             else if (curMoveStage < 7)
+            {
                 super.setImage(direction + 1, 3);
+                combozo.update("active");
+            }
             else
+            {
                 super.setImage(direction + 1, 10 - curMoveStage);
+                combozo.update("recovery");
+            }
             
             if (!(curMoveStage == curMoveDuration))
             {
@@ -218,19 +224,27 @@ public class Player extends PlayCharacter
                 curMoveDuration = 0;
                 curMoveStage = 0;
                 super.setImage(direction, 0);
+                combozo.update("neutral");
             }
         }
         
         if (curMove.equals("kick"))
         {
-            System.out.println("kick");
-            
             if (curMoveStage < 8)
+            {
                 super.setImage(direction + 2, curMoveStage / 2);
+                combozo.update("startup");
+            }
             else if (curMoveStage < 12)
+            {
                 super.setImage(direction + 3, 0);
+                combozo.update("active");
+            }
             else
+            {
                 super.setImage(direction + 2, 8 - (curMoveStage / 2));
+                combozo.update("recovery");
+            }
             
             if (!(curMoveStage == curMoveDuration))
             {
@@ -242,15 +256,13 @@ public class Player extends PlayCharacter
                 curMoveDuration = 0;
                 curMoveStage = 0;
                 super.setImage(direction, 0);
+                combozo.update("neutral");
             }
         }
-            
+        
+        System.out.println(combozo.getStage());
+        
         super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
-    }
-    
-    public boolean[][] getCombo()
-    {
-        return combozo.getCombo();
     }
 }
