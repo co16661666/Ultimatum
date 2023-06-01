@@ -28,7 +28,7 @@ public class Main extends JFrame
             //creates the character that the user will play
             panel.addCharacter(new Player("character0", "https://codehs.com/uploads/1fffd8a936efb6ffad043090d17d59b3", 100, 0, 0, 330, 324, 8, 4));
             //creates the character that the user will face off again
-            panel.addCharacter(new Bot("character1", "https://codehs.com/uploads/1fffd8a936efb6ffad043090d17d59b3", 100, 0, 0, 330, 324, 2, 6));
+            panel.addCharacter(new Bot("character1", "https://codehs.com/uploads/1fffd8a936efb6ffad043090d17d59b3", 100, 0, 0, 330, 324, 8, 4));
             
             //Setting up the JFrame to draw on
             panel.setBackground(Color.BLACK.darker()); //Black background
