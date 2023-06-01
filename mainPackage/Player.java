@@ -67,7 +67,7 @@ public class Player extends PlayCharacter
                 xVelocity /= 3;
         }
         
-        if (keyInputs[4])
+        if (keyInputs[4] && !Drawer.keyData[58][4])
         {
             //u
             if (combozo.checkCanMove("light"))
@@ -81,7 +81,7 @@ public class Player extends PlayCharacter
             keyInputs[4] = false;
         }
         
-        if (keyInputs[5])
+        if (keyInputs[5] && !Drawer.keyData[58][5])
         {
             //u
             if (combozo.checkCanMove("heavy"))
@@ -95,7 +95,7 @@ public class Player extends PlayCharacter
             keyInputs[5] = false;
         }
         
-        if (keyInputs[7])
+        if (keyInputs[7] && !Drawer.keyData[58][7])
         {
             if (combozo.checkCanMove("heavy"))
             {
