@@ -36,6 +36,7 @@ public class Drawer extends JPanel implements KeyListener
     //setup for timing frames
     private long prevT = 0L;
     public long frame = 0;
+    public static boolean[][] keyData = new boolean[60][10];
     
     //creates array of keyInputs
     private boolean[] keyInputs = new boolean[10];
@@ -153,6 +154,16 @@ public class Drawer extends JPanel implements KeyListener
         sprity.add(x);
     }
     
+    public static void updateKeyList(boolean[] in)
+    {
+        for (int i = 1; i < 60; i++)
+        {
+            keyData[i - 1] = keyData[i];
+        }
+        
+        keyData[59] = Arrays.copyOf(in, 10);
+    }
+    
     /**
      * Called by the runtime system whenever the panel needs painting.
      */
@@ -183,6 +194,8 @@ public class Drawer extends JPanel implements KeyListener
         frame++;
         //System.out.println(frame);
         
+        updateKeyList(keyInputs);
+        
         //Calls the JComponent paintComponent method
         super.paintComponent(g);
         
@@ -200,6 +213,8 @@ public class Drawer extends JPanel implements KeyListener
         {
             g.drawImage(x.getImage(),x.getX(),x.getY(),null);
         }
+        
+        
         
         //Paints the image so the user can see it, then calls this method again to loop
         repaint();
