@@ -77,11 +77,13 @@ public class Player extends PlayCharacter
                 curMoveDuration = 8;
                 combozo.update("neutral");
             }
+            
+            keyInputs[4] = false;
         }
         
         if (keyInputs[5])
         {
-            //i
+            //u
             if (combozo.checkCanMove("heavy"))
             {
                 curMove = "heavyPunch";
@@ -89,11 +91,12 @@ public class Player extends PlayCharacter
                 curMoveDuration = 10;
                 combozo.update("neutral");
             }
+            
+            keyInputs[5] = false;
         }
         
         if (keyInputs[7])
         {
-            //j
             if (combozo.checkCanMove("heavy"))
             {
                 curMove = "kick";
@@ -101,6 +104,8 @@ public class Player extends PlayCharacter
                 curMoveDuration = 18;
                 combozo.update("neutral");
             }
+            
+            keyInputs[7] = false;
         }
         
         if (keyInputs[0])
@@ -258,11 +263,21 @@ public class Player extends PlayCharacter
                 super.setImage(direction, 0);
                 combozo.update("neutral");
             }
+            
         }
         
         System.out.println(combozo.getStage());
         
         super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
+        
+        if(super.getX()<=-100)
+        {
+            super.setX(-100);
+        }
+        if(super.getX()>=830){
+            super.setX(830);
+        }
+        
     }
 }
