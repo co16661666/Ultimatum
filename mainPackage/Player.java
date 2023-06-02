@@ -289,8 +289,8 @@ public class Player extends PlayCharacter
         {
             super.setX(-100);
         }
-        if(super.getX()>=1200){
-            super.setX(1200);
+        if(super.getX()>=1080){
+            super.setX(1080);
         }
         
     }
