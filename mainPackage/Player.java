@@ -51,7 +51,7 @@ public class Player extends PlayCharacter
 //         }
 //         System.out.println();
 
-        System.out.println(Drawer.keyData[58][1]);
+        
         
         if (super.getY() <= ground)
         {
@@ -121,11 +121,25 @@ public class Player extends PlayCharacter
             
             if (!(xVelocity < -10) && super.getY() > ground)
             {
-                if (Drawer.keyData[58][1] == false)
+                boolean temp = false;
+                if (!Drawer.keyData[58][1])
                 {
                     for (int i = 50; i < 58; i++)
                     {
+                        if (Drawer.keyData[i][1])
+                        {
+                            temp = true;
+                            break;
+                        }
+                    }
+                    
+                    if (temp)
+                    {
                         xVelocity -= 20;
+                    }
+                    else
+                    {
+                        xVelocity -= 1;
                     }
                 }
                 else
@@ -149,20 +163,34 @@ public class Player extends PlayCharacter
             //d
             curMove = "walk";
             
-            if (!(xVelocity > 10) && super.getY() > ground)
+            if (!(xVelocity < -10) && super.getY() > ground)
             {
-                if (Drawer.keyData[58][3] == false)
+                boolean temp = false;
+                if (!Drawer.keyData[58][3])
                 {
                     for (int i = 50; i < 58; i++)
                     {
+                        if (Drawer.keyData[i][3])
+                        {
+                            temp = true;
+                            break;
+                        }
+                    }
+                    
+                    if (temp)
+                    {
                         xVelocity += 20;
+                    }
+                    else
+                    {
+                        xVelocity += 1;
                     }
                 }
                 else
                 {
                     xVelocity += 1;
                 }
-            } 
+            }
         }
         else if (curMove == "walk")
         {
@@ -281,8 +309,6 @@ public class Player extends PlayCharacter
             }
             
         }
-        
-        System.out.println(combozo.getStage());
         
         super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
