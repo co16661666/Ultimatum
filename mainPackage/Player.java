@@ -163,7 +163,7 @@ public class Player extends PlayCharacter
             //d
             curMove = "walk";
             
-            if (!(xVelocity < -10) && super.getY() > ground)
+            if (!(xVelocity < 10) && super.getY() > ground)
             {
                 boolean temp = false;
                 if (!Drawer.keyData[58][3])
