@@ -119,7 +119,17 @@ public class Player extends PlayCharacter
             
             if (!(xVelocity < -10) && super.getY() > ground)
             {
-                xVelocity -= 1;
+                if (Drawer.keyData[58][1] == false)
+                {
+                    for (int i = 50; i < 58; i++)
+                    {
+                        xVelocity -= 20;
+                    }
+                }
+                else
+                {
+                    xVelocity -= 1;
+                }
             }
         }
         else if (curMove == "walk")
@@ -139,7 +149,17 @@ public class Player extends PlayCharacter
             
             if (!(xVelocity > 10) && super.getY() > ground)
             {
-                xVelocity += 1;
+                if (Drawer.keyData[58][3] == false)
+                {
+                    for (int i = 50; i < 58; i++)
+                    {
+                        xVelocity += 20;
+                    }
+                }
+                else
+                {
+                    xVelocity += 1;
+                }
             } 
         }
         else if (curMove == "walk")
