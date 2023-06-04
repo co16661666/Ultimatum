@@ -210,7 +210,7 @@ public class Drawer extends JPanel implements KeyListener
             if (x instanceof Bot)
                 ((Bot) x).update((Player) sprity.get(1));
             else if (x instanceof Player)
-                ((Player) x).update(keyInputs);
+                ((Player) x).update(keyInputs, (Bot) sprity.get(2));
         }
         
         //Iterates through all objects, and displays them to the screen.
