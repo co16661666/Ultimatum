@@ -37,7 +37,7 @@ public class Player extends PlayCharacter
         combozo = new Combos();
     }
     
-    public void update(boolean[] keyInputs)
+    public void update(boolean[] keyInputs, Player other)
     {
 //         for (int i = 0; i < 60; i++)
 //         {
@@ -50,8 +50,6 @@ public class Player extends PlayCharacter
 //             System.out.println();
 //         }
 //         System.out.println();
-
-        
         
         if (super.getY() <= ground)
         {
