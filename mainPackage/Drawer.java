@@ -216,7 +216,7 @@ public class Drawer extends JPanel implements KeyListener
         //Iterates through all objects, and displays them to the screen.
         for (PlayCharacter x : sprity)
         {
-            g.drawImage(x.getImage(),x.getX(),x.getY(),null);
+            g.drawImage(x.getImage(),1000,x.getY(),null);
         }
         
         
