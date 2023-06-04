@@ -164,6 +164,11 @@ public class Drawer extends JPanel implements KeyListener
         keyData[59] = Arrays.copyOf(in, 10);
     }
     
+    public ArrayList<PlayCharacter> getSprity()
+    {
+        return sprity;
+    }
+    
     /**
      * Called by the runtime system whenever the panel needs painting.
      */
