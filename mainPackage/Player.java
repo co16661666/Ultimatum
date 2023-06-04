@@ -50,6 +50,11 @@ public class Player extends PlayCharacter
 //             System.out.println();
 //         }
 //         System.out.println();
+
+        if (other.getX() - super.getX() > 0)
+            direction = 0;
+        else
+            direction = 4;
         
         if (super.getY() <= ground)
         {
