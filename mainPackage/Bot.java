@@ -13,6 +13,11 @@ public class Bot extends Player
     {
         boolean[] moves = new boolean[10];
         
+        if (other.getX() - super.getX() > 0)
+            direction = 0;
+        else
+            direction = 4;
+        
         // if (Math.abs(other.getX() - super.getX()) < 30)
         // {
         //     moves[4] = true;
