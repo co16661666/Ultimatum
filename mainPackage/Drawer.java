@@ -219,9 +219,15 @@ public class Drawer extends JPanel implements KeyListener
             g.drawImage(x.getImage(),x.getX(),x.getY(),null);
         }
         
-        g.fillRect (50, 650, 350, 20);
+        g.fillRect(50, 650, 350, 20);
         
-        g.fillRect (1030, 650, 350, 20);
+        g.fillRect(880, 650, 350, 20);
+        
+        g.setColor(new Color(0, 145, 15));
+        
+        g.fillRect(50, 650, 350, 20);
+        
+        g.fillRect(880, 650, 350, 20);
         
         //Paints the image so the user can see it, then calls this method again to loop
         repaint();
