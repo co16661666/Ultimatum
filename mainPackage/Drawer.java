@@ -229,9 +229,9 @@ public class Drawer extends JPanel implements KeyListener
         
 //         g.fillRect(880, 650, sprity.get(2).getHealth(), 20);
 
-        g.fillRect(50, 650, (sprity.get(1).getHealth() * 350) / 100, 20);
+        g.fillRect(50, 650, (int) (sprity.get(1).getHealth() * 350) / 100, 20);
         
-        g.fillRect(880 + (350 - (sprity.get(2).getHealth() * 350) / 100), 650, (sprity.get(2).getHealth() * 350) / 100, 20);
+        g.fillRect(880 + (int) (350 - (sprity.get(2).getHealth() * 350) / 100), 650, (int) (sprity.get(2).getHealth() * 350) / 100, 20);
         
         //Paints the image so the user can see it, then calls this method again to loop
         repaint();
