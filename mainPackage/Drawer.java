@@ -44,8 +44,6 @@ public class Drawer extends JPanel implements KeyListener
     //creates ArrayList of all objects that will be drawn
     private ArrayList<PlayCharacter> sprity = new ArrayList<PlayCharacter>();
     
-    //setting up health bar variables
-    public static health1 
     public Drawer()
     {
         //setting up key inputs
