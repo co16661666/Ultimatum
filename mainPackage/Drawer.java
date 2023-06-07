@@ -26,9 +26,6 @@ import java.net.URL;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-/**
- * A panel maintaining a picture of a Do Not Enter sign.
- */
 public class Drawer extends JPanel implements KeyListener
 {
     private static final long serialVersionUID = 7148504528835036003L;
