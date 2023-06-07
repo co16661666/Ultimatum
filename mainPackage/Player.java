@@ -328,8 +328,8 @@ public class Player extends PlayCharacter
             super.setX(1280 - width);
         }
         
-        width1 = super.getX()+75;
-        height1 = super.getY()+285;
+        int width1 = super.getX()+75;
+        int height1 = super.getY()+285;
         
         if(other.getX()+37.5<=width1&&other.getX()>=width1&&(other.getY()>super.getY()||other.getY()<width1)){
             super.setImage(1,3);
