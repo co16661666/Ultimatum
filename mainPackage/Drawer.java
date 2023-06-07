@@ -44,6 +44,8 @@ public class Drawer extends JPanel implements KeyListener
     //creates ArrayList of all objects that will be drawn
     private ArrayList<PlayCharacter> sprity = new ArrayList<PlayCharacter>();
     
+    //setting up health bar variables
+    public static health1 
     public Drawer()
     {
         //setting up key inputs
@@ -225,9 +227,13 @@ public class Drawer extends JPanel implements KeyListener
         
         g.setColor(new Color(0, 145, 15));
         
-        g.fillRect(50, 650, 350, 20);
+//         g.fillRect(50, 650, sprity.get(1).getHealth(), 20);
         
-        g.fillRect(880, 650, 350, 20);
+//         g.fillRect(880, 650, sprity.get(2).getHealth(), 20);
+
+        g.fillRect(50, 650, (sprity.get(1).getHealth() * 350) / 100, 20);
+        
+        g.fillRect(880 + (350 - (sprity.get(2).getHealth() * 350) / 100), 650, (sprity.get(2).getHealth() * 350) / 100, 20);
         
         //Paints the image so the user can see it, then calls this method again to loop
         repaint();
