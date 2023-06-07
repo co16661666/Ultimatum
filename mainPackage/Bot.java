@@ -13,18 +13,18 @@ public class Bot extends Player
     {
         boolean[] moves = new boolean[10];
         
-        // if (Math.abs(other.getX() - super.getX()) < 30)
-        // {
-        //     moves[4] = true;
-        // }
-        // if(other.getX()-super.getX()<500)
-        // {
-        //     moves[3] = true;
-        // }
-        // if(other.getX()-super.getX()<-500)
-        // {
-        //     moves[1] = true;
-        // }
+        if (Math.abs(other.getX() - super.getX()) < 30)
+        {
+            moves[4] = true;
+        }
+        if(other.getX()-super.getX()<500)
+        {
+            moves[3] = true;
+        }
+        if(other.getX()-super.getX()<-500)
+        {
+            moves[1] = true;
+        }
         
         
         super.update(moves, other);
