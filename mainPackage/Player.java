@@ -325,7 +325,7 @@ public class Player extends PlayCharacter
             super.setX(-100);
         }
         if(super.getX()>1280 - width){
-            super.setX(1280 - width);
+            super.setX(1280);
         }
         width = super.getX()+75;
         height = super.getY()+285;
