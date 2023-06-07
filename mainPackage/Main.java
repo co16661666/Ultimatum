@@ -26,9 +26,9 @@ public class Main extends JFrame
             //creating object for background
             panel.addCharacter(new PlayCharacter("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0, 1280, 720, 1, 1));
             //creates the character that the user will play
-            panel.addCharacter(new Player("character0", "https://codehs.com/uploads/1fffd8a936efb6ffad043090d17d59b3", 100, 0, 0, 330, 324, 8, 4));
+            panel.addCharacter(new Player("character0", "https://codehs.com/uploads/1fffd8a936efb6ffad043090d17d59b3", 50, 0, 0, 330, 324, 8, 4));
             //creates the character that the user will face off again
-            panel.addCharacter(new Bot("character1", "https://codehs.com/uploads/1fffd8a936efb6ffad043090d17d59b3", 100, 1000, 0, 330, 324, 8, 4));
+            panel.addCharacter(new Bot("character1", "https://codehs.com/uploads/1fffd8a936efb6ffad043090d17d59b3", 50, 1000, 0, 330, 324, 8, 4));
             
             //Setting up the JFrame to draw on
             panel.setBackground(Color.BLACK.darker()); //Black background
