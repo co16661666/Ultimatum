@@ -205,19 +205,19 @@ public class Drawer extends JPanel implements KeyListener
         super.paintComponent(g);
         
         //Runs update for all applicable objects that can be drawn
-//         for (PlayCharacter x : sprity)
-//         {
-//             if (x instanceof Bot)
-//                 ((Bot) x).update((Player) sprity.get(1));
-//             else if (x instanceof Player)
-//                 ((Player) x).update(keyInputs, (Bot) sprity.get(2));
-//         }
+        for (PlayCharacter x : sprity)
+        {
+            if (x instanceof Bot)
+                ((Bot) x).update((Player) sprity.get(1));
+            else if (x instanceof Player)
+                ((Player) x).update(keyInputs, (Bot) sprity.get(2));
+        }
         
-//         //Iterates through all objects, and displays them to the screen.
-//         for (PlayCharacter x : sprity)
-//         {
-//             g.drawImage(x.getImage(),x.getX(),x.getY(),null);
-//         }
+        //Iterates through all objects, and displays them to the screen.
+        for (PlayCharacter x : sprity)
+        {
+            g.drawImage(x.getImage(),x.getX(),x.getY(),null);
+        }
         
         g.drawRect(50, 700, 200, 20);
         
