@@ -15,6 +15,8 @@ public class Player extends PlayCharacter
     private int curMoveStage;
     private int curMoveDuration;
     private int timer;
+    private int width;
+    private int height;
     
     private Combos combozo;
     
@@ -35,6 +37,8 @@ public class Player extends PlayCharacter
         direction = 0;
         
         combozo = new Combos();
+        width = x+75;
+        height = y+285;
     }
     
     public void update(boolean[] keyInputs, Player other)
@@ -316,13 +320,18 @@ public class Player extends PlayCharacter
         super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
         
-        if(super.getX()<=-100)
+        if(super.getX()<-100)
         {
             super.setX(-100);
         }
-        if(super.getX()>=1080){
-            super.setX(1080);
-        }
+        // if(width>1280){
+        //     super.setX(800);
+        // }
+        width = super.getX()+75;
+        height = super.getY()+285;
         
+        if(other.getX()+37.5<=width&&other.getX()>=width&&(other.getY()>super.getY()||other.getY()<width)){
+            super.setImage(1,3);
+        }
     }
 }
