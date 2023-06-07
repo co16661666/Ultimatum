@@ -17,14 +17,14 @@ public class Bot extends Player
         // {
         //     moves[4] = true;
         // }
-        if(other.getX()-super.getX()<500)
-        {
-            moves[3] = true;
-        }
-        if(other.getX()-super.getX()<-500)
-        {
-            moves[1] = true;
-        }
+        // if(other.getX()-super.getX()<500)
+        // {
+        //     moves[3] = true;
+        // }
+        // if(other.getX()-super.getX()<-500)
+        // {
+        //     moves[1] = true;
+        // }
         
         
         super.update(moves, other);
