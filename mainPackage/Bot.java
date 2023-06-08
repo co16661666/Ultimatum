@@ -31,8 +31,4 @@ public class Bot extends Player
         
         super.update(moves, other);
     }
-     public void updateHit(Player other)
-    {
-        ;
-    }
 }
