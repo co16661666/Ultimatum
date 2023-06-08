@@ -250,16 +250,19 @@ public class Player extends PlayCharacter
             {
                 super.setImage(direction, curMoveStage);
                 combozo.update("startup");
+                attacking = false;
             }
             else if (curMoveStage == 4)
             {
                 super.setImage(direction, 3);
                 combozo.update("active");
+                attacking = true;
             }
             else
             {
                 super.setImage(direction, 8 - curMoveStage);
                 combozo.update("recovery");
+                attacking = false;
             }
             
             if (!(curMoveStage == curMoveDuration))
@@ -282,16 +285,19 @@ public class Player extends PlayCharacter
             {
                 super.setImage(direction + 1, curMoveStage);
                 combozo.update("startup");
+                attacking = false;
             }
             else if (curMoveStage < 7)
             {
                 super.setImage(direction + 1, 3);
                 combozo.update("active");
+                attacking = true;
             }
             else
             {
                 super.setImage(direction + 1, 10 - curMoveStage);
                 combozo.update("recovery");
+                attacking = false;
             }
             
             if (!(curMoveStage == curMoveDuration))
@@ -314,16 +320,19 @@ public class Player extends PlayCharacter
             {
                 super.setImage(direction + 2, curMoveStage / 2);
                 combozo.update("startup");
+                attacking = false;
             }
             else if (curMoveStage < 12)
             {
                 super.setImage(direction + 3, 0);
                 combozo.update("active");
+                attacking = true;
             }
             else
             {
                 super.setImage(direction + 2, 8 - (curMoveStage / 2));
                 combozo.update("recovery");
+                attacking = false;
             }
             
             if (!(curMoveStage == curMoveDuration))
