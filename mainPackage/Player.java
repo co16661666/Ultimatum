@@ -22,6 +22,9 @@ public class Player extends PlayCharacter
     private boolean attacking;
     private int attackPointX;
     private int attackPointY;
+    private int damage;
+    private int width1;
+    private int height1;
     
     public Player(String name, String imageURL, int health, int x, int y, int width, int height, int frameCountRow, int frameCountCol)
     {
@@ -40,8 +43,35 @@ public class Player extends PlayCharacter
         direction = 0;
         
         combozo = new Combos();
-        width = x+75;
-        height = y+285;
+        attacking = false;
+        attackPointX = 0;
+        attackPointY = 0;
+        damage = 0;
+        width1 = x+108;
+        height1 = y+285;
+    }
+    
+    public boolean isAttacking()
+    {
+        return attacking;
+    }
+    
+    public int attackX()
+    {
+        return attackPointX;
+    }
+    
+    public int attackY()
+    {
+        return attackPointY;
+    }
+    
+    public int damage()
+    {
+        if (xVelocity > 10)
+            return (int) (damage * 1.5);
+        else
+            return damage;
     }
     
     public void update(boolean[] keyInputs, Player other)
@@ -90,11 +120,12 @@ public class Player extends PlayCharacter
                 combozo.update("neutral");
                 
                 if (direction == 0)
-                    attackPointX = super.getX() + 300;
+                    attackPointX = super.getX() + 150;
                 else
                     attackPointX = super.getX() + 30;
                     
                 attackPointY = 216;
+                damage = 5;
             }
         }
         
@@ -114,6 +145,7 @@ public class Player extends PlayCharacter
                     attackPointX = super.getX() + 110;
                     
                 attackPointY = 216;
+                damage = 10;
             }
         }
         
@@ -132,6 +164,8 @@ public class Player extends PlayCharacter
                     attackPointX = super.getX();
                     
                 attackPointY = 250;
+                
+                damage = 15;
             }
         }
         
@@ -361,14 +395,28 @@ public class Player extends PlayCharacter
             super.setX(1280 - 330);
         }
         
-        int width1 = super.getX()+75;
-        int height1 = super.getY()+285;
         
         if(other.getX()+37.5<=width1&&other.getX()>=width1&&(other.getY()>super.getY()||other.getY()<width1)){
             super.setImage(1,3);
         }
-        
-        if (super.getName().equals("character0"))
-            System.out.println(attacking);
+        width1 = super.getX()+108;
+        height1 = super.getY()+285;
+    }
+    
+    public boolean selfHit(int xAttack, int yAttack)
+    {
+        if(xAttack >= super.getX() && xAttack <= width1){
+            return true;
+        }
+        System.out.println(super.getX()+"  "+xAttack+"   " +width1);
+        return false; 
+    }
+    public void updateHit(Player other)
+    {
+        if (other.isAttacking() && selfHit(other.attackX(), other.attackY()))
+        {
+            super.takeDamage(other.damage());
+            System.out.println("DAMAGEEEEEE");
+        }
     }
 }
