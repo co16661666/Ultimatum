@@ -368,7 +368,7 @@ public class Player extends PlayCharacter
             super.setImage(1,3);
         }
         
-        if (name.equals("character0"))
+        if (super.getName().equals("character0"))
             System.out.println(attacking);
     }
 }
