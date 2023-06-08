@@ -19,6 +19,9 @@ public class Player extends PlayCharacter
     private int height;
     
     private Combos combozo;
+    private boolean attacking;
+    private int attackPointX;
+    private int attackPointY;
     
     public Player(String name, String imageURL, int health, int x, int y, int width, int height, int frameCountRow, int frameCountCol)
     {
@@ -85,6 +88,13 @@ public class Player extends PlayCharacter
                 curMoveStage = 0;
                 curMoveDuration = 8;
                 combozo.update("neutral");
+                
+                if (direction == 0)
+                    attackPointX = super.getX() + 300;
+                else
+                    attackPointX = super.getX() + 30;
+                    
+                attackPointY = 216;
             }
         }
         
@@ -97,6 +107,13 @@ public class Player extends PlayCharacter
                 curMoveStage = 0;
                 curMoveDuration = 10;
                 combozo.update("neutral");
+                
+                if (direction == 0)
+                    attackPointX = super.getX() + 220;
+                else
+                    attackPointX = super.getX() + 110;
+                    
+                attackPointY = 216;
             }
         }
         
@@ -108,6 +125,13 @@ public class Player extends PlayCharacter
                 curMoveStage = 0;
                 curMoveDuration = 18;
                 combozo.update("neutral");
+                
+                if (direction == 0)
+                    attackPointX = super.getX() + 330;
+                else
+                    attackPointX = super.getX();
+                    
+                attackPointY = 250;
             }
         }
         
