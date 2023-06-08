@@ -367,5 +367,8 @@ public class Player extends PlayCharacter
         if(other.getX()+37.5<=width1&&other.getX()>=width1&&(other.getY()>super.getY()||other.getY()<width1)){
             super.setImage(1,3);
         }
+        
+        if (name.equals("character0"))
+            System.out.println(attacking);
     }
 }
