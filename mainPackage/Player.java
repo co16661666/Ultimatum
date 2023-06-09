@@ -409,7 +409,7 @@ public class Player extends PlayCharacter
     
     public boolean selfHit(int xAttack, int yAttack)
     {
-        if(xAttack >= super.getX() && xAttack <= width1){
+        if(xAttack >= super.getX() + 108 && xAttack <= width1){
             return true;
         }
         System.out.println(super.getX()+"  "+xAttack+"   " +width1);
