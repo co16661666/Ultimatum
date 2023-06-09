@@ -140,9 +140,9 @@ public class Player extends PlayCharacter
                 combozo.update("neutral");
                 
                 if (direction == 0)
-                    attackPointX = super.getX() + 170;
+                    attackPointX = super.getX() + 110;
                 else
-                    attackPointX = super.getX() + 220;
+                    attackPointX = super.getX() + 280;
                     
                 attackPointY = 216;
                 damage = 10;
