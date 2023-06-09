@@ -145,7 +145,7 @@ public class Player extends PlayCharacter
                     attackPointX = super.getX() + 260;
                     
                 attackPointY = 216;
-                damage = 10;
+                damage = 5;
             }
         }
         
@@ -165,7 +165,7 @@ public class Player extends PlayCharacter
                     
                 attackPointY = 250;
                 
-                damage = 15;
+                damage = 5;
             }
         }
         
