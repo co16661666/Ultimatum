@@ -384,7 +384,7 @@ public class Player extends PlayCharacter
             
         }
         
-        if (!(super.getX() < -100) && !(super.getX() > 1280 - 150)
+        if (!(super.getX() < -100) && !(super.getX() > 1280 - 150))
             super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
         
