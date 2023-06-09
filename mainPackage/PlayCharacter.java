@@ -22,6 +22,11 @@ import java.io.OutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
  
+/**
+ * @author      Aryan Patel
+ * @version     1.0
+ * @since       1.0
+ */
 public class PlayCharacter
 {
     private String name;
