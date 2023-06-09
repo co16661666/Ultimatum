@@ -26,31 +26,65 @@ import java.net.URL;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * @author      Chinli Ong <chinli.ong@icloud.com>
+ * @version     1.0
+ * @since       1.0
+ */
 public class Drawer extends JPanel implements KeyListener
 {
     private static final long serialVersionUID = 7148504528835036003L;
     
-    //setup for timing frames
+    /**
+     * Records previous time that the frame was run
+     */
     private long prevT = 0L;
+    /**
+     * Number of current frame since beginning of program
+     */
     public long frame = 0;
-    public static boolean[][] keyData = new boolean[60][10];
     
-    //creates array of keyInputs
+    /**
+     * Records a history of all key inputs in the last 60 frames
+     */
+    //public static boolean[][] keyData = new boolean[60][10];
+    
+    /**
+     * Array of current key inputs
+     */
     private boolean[] keyInputs = new boolean[10];
     
-    //creates ArrayList of all objects that will be drawn
+    /**
+     * ArrayList of all objects that need to be drawn
+     */
     private ArrayList<PlayCharacter> sprity = new ArrayList<PlayCharacter>();
     
+    /**
+     * Constructor for Drawer class
+     * <p>
+     * Sets up the Drawer class for keyListener and also sets up double buffering
+     */
     public Drawer()
     {
-        //setting up key inputs
+        //Adds the keyListener to receive key inputs
         addKeyListener(this);
+        
+        //Allows the Panel to be focused on
         setFocusable(true);
+        
+        //Allows the keys to be focused
         setFocusTraversalKeysEnabled(true);
+        
+        //Allows double buffering of frames
         setDoubleBuffered(true);
     }
     
-    //sets respective items in keyInputs to true when a key is pressed
+    /**
+     * Is called whenever a key is pressed down
+     * <p>
+     * This method sets the keyInputs array items to true if a certain key is pressed (w, a, s, d, u, i, o, j, k, l). This method implements the KeyListener class method
+     * @param e The key user's key interaction
+     */
     public void keyPressed(KeyEvent e)
     {
         if (e.getKeyCode() == 85)
@@ -96,6 +130,12 @@ public class Drawer extends JPanel implements KeyListener
         }
     }
     
+    /**
+     * Is called whenever a key is released
+     * <p>
+     * This method sets the keyInputs array items to false if a certain key is released (w, a, s, d, u, i, o, j, k, or l). This method implements the KeyListener class method
+     * @param e The key user's key interaction
+     */
     public void keyReleased(KeyEvent e)
     {
         if (e.getKeyCode() == 85)
@@ -141,33 +181,59 @@ public class Drawer extends JPanel implements KeyListener
         }
     }
     
+    /**
+     * Is called whenever a key is typed
+     * <p>
+     * This method is not used. This method implements the KeyListener class method
+     * @param e The key user's key interaction
+     */
     public void keyTyped(KeyEvent e)
     {
         ;
     }
     
+    /**
+     * This is how objects that need to be drawn are added to the ArrayList of the Drawer class
+     * @param x A PlayCharacter object that will need to be drawn by the Drawer class
+     */
     public void addCharacter(PlayCharacter x)
     {
         sprity.add(x);
     }
     
-    public static void updateKeyList(boolean[] in)
-    {
-        for (int i = 1; i < 60; i++)
-        {
-            keyData[i - 1] = keyData[i];
-        }
+    /**
+     * This method is called every time the screen is updated and updates the key history
+     * <p>
+     * It moves all the previous key inputs "down" one index (e.g. keyData[1] -> keyData[0]) with the oldest set of key inputs (keyData[0]) being discarded and the 59th index (keyData[59]) being set to the current key inputs
+     * @param in The current key inputs
+     */
+    // public static void updateKeyList(boolean[] in)
+    // {
+    //     //For loop to iterate through the array and move the indexes down
+    //     for (int i = 1; i < 60; i++)
+    //     {
+    //         //Sets previous key index to the next index (discards oldest key index)
+    //         keyData[i - 1] = keyData[i];
+    //     }
         
-        keyData[59] = Arrays.copyOf(in, 10);
-    }
+    //     //Sets the last index of the array to a *copy* of the latest key inputs to avoid errors with references to the current array
+    //     keyData[59] = Arrays.copyOf(in, 10);
+    // }
     
+    /**
+     * Getter method for the ArrayList of all PlayCharacters the need to be drawn
+     * @return sprity Instance variable storing all PlayCharacters to be drawn
+     */
     public ArrayList<PlayCharacter> getSprity()
     {
         return sprity;
     }
     
     /**
-     * Called by the runtime system whenever the panel needs painting.
+     * Calls itself repeatedly to repaint the screen
+     * <p>
+     * This method has a delay to ensure it runs at a maximum of 60 frames per second. It runs the update method (if applicable) for all PlayCharacter objects and the draws them to the Panel. It also draws the healthbars for the user and robot
+     * @param g Graphics component for drawing
      */
     public void paintComponent(Graphics g)
     {
@@ -179,24 +245,25 @@ public class Drawer extends JPanel implements KeyListener
         {
             try
             {
+                //Sleeps for 1/60 of a second
                 Thread.sleep(((int) Math.abs(System.nanoTime() - prevT)) / 1000000, ((int) Math.abs(System.nanoTime() - prevT)) % 1000000);
             }
             catch (InterruptedException e)
             {
                 e.printStackTrace();
             }
+            
+            //Sets the previous time to current time
             prevT = System.nanoTime();
         }
         else
         {
+            //Sets the previous time to current time
             prevT = System.nanoTime();
         }
         
         //Increase the current frame number by one
         frame++;
-        //System.out.println(frame);
-        
-        updateKeyList(keyInputs);
         
         //Calls the JComponent paintComponent method
         super.paintComponent(g);
@@ -210,6 +277,7 @@ public class Drawer extends JPanel implements KeyListener
                 ((Player) x).update(keyInputs, (Bot) sprity.get(2));
         }
         
+        //Runs update for all applicable objects that can take damage or deal damage
         for (PlayCharacter x : sprity)
         {
             if (x.getName().equals("character0"))
@@ -218,24 +286,25 @@ public class Drawer extends JPanel implements KeyListener
                 ((Player) x).updateHit((Player) sprity.get(1));
         }
         
-        //Iterates through all objects, and displays them to the screen.
+        //Iterates through all objects, and displays them to the screen
         for (PlayCharacter x : sprity)
         {
             g.drawImage(x.getImage(),x.getX(),x.getY(),null);
         }
         
+        //Draws up the background of the first healthbar
         g.fillRect(50, 650, 350, 20);
         
+        //Draws up the background of the second healthbar
         g.fillRect(880, 650, 350, 20);
         
+        //Changes the color for the primary color of the background (Green)
         g.setColor(new Color(0, 145, 15));
         
-//         g.fillRect(50, 650, sprity.get(1).getHealth(), 20);
-        
-//         g.fillRect(880, 650, sprity.get(2).getHealth(), 20);
-
+        //Draws up the meter of the first healthbar
         g.fillRect(50, 650, (int) (sprity.get(1).getHealth() * 350) / 100, 20);
         
+        //Draws up the meter of the second healthbar
         g.fillRect(880 + (int) (350 - (sprity.get(2).getHealth() * 350) / 100), 650, (int) (sprity.get(2).getHealth() * 350) / 100, 20);
         
         //Paints the image so the user can see it, then calls this method again to loop
