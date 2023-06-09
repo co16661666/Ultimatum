@@ -403,13 +403,13 @@ public class Player extends PlayCharacter
         if(other.getX()+37.5<=width1&&other.getX()>=width1&&(other.getY()>super.getY()||other.getY()<width1)){
             super.setImage(1,3);
         }
-        width1 = super.getX()+108;
+        width1 = super.getX()+220;
         height1 = super.getY()+285;
     }
     
     public boolean selfHit(int xAttack, int yAttack)
     {
-        if(xAttack >= super.getX() && xAttack <= width1){
+        if(xAttack >= super.getX() + 110 && xAttack <= width1){
             return true;
         }
         System.out.println(super.getX()+"  "+xAttack+"   " +width1);
