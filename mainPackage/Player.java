@@ -384,16 +384,17 @@ public class Player extends PlayCharacter
             
         }
         
-        super.setX(super.getX() + (int) xVelocity);
+        if (!(super.getX() < -100) && !(super.getX() > 1280 - 150)
+            super.setX(super.getX() + (int) xVelocity);
         super.setY(super.getY() + (int) yVelocity);
         
-        if(super.getX()<-100)
-        {
-            super.setX(-100);
-        }
-        if(super.getX()>1280 - 330){
-            super.setX(1280 - 330);
-        }
+//         if(super.getX()<-100)
+//         {
+//             super.setX(-100);
+//         }
+//         if(super.getX()>1280 - 330){
+//             super.setX(1280 - 330);
+//         }
         
         
         if(other.getX()+37.5<=width1&&other.getX()>=width1&&(other.getY()>super.getY()||other.getY()<width1)){
