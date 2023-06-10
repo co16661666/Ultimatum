@@ -52,9 +52,21 @@ public class Bot extends Player
         {
             move = true;
             
-            if (super.getCurMove().equals("none") || super.getCurMove().equals("walk") && Math.random() < 0.2)
+            if (super.getCurMove().equals("none") || super.getCurMove().equals("walk") && Math.random() < 0.1)
             {
                 moves[5] = true;
+                move = false;
+                System.out.println("smack");
+            }
+            else if (super.getCurMove().equals("none") || super.getCurMove().equals("walk") && Math.random() < 0.15)
+            {
+                moves[4] = true;
+                move = false;
+                System.out.println("smack");
+            }
+            else if (super.getCurMove().equals("none") || super.getCurMove().equals("walk") && Math.random() < 0.2)
+            {
+                moves[7] = true;
                 move = false;
                 System.out.println("smack");
             }
