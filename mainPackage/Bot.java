@@ -85,7 +85,7 @@ public class Bot extends Player
         //For the interval of 0 to 200 for the count variable, it makes the Bot crouch
         if(count<200&&!move)
         {
-            moves[2] = true;
+            moves[5] = true;
         }
         
         /**
