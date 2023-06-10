@@ -388,12 +388,15 @@ public class Player extends PlayCharacter
         //If the move left key (a) is pressed, otherwise, if the current move is walk, set it to neutral
         if (keyInputs[1])
         {
-            //Set the current move to walk
-            curMove = "walk";
-            
             //Check if the object is on the ground and its X-Velocity is not greater than 10
-            if (!(xVelocity < -10) && super.getY() > ground)
+            if (!(xVelocity < -10) && super.getY() > ground && combozo.checkCanMove("heavy"))
             {
+                //Set the current move to walk
+                curMove = "walk";
+                
+                //Set the starting state to neutral
+                combozo.update("neutral");
+                
                 //Variable for if the button was double tapped
                 boolean temp = false;
                 
@@ -443,12 +446,15 @@ public class Player extends PlayCharacter
         //If the move right key (d) is pressed, otherwise, if the current move is walk, set it to neutral
         if (keyInputs[3])
         {
-            //Set the current move to walk
-            curMove = "walk";
-            
             //Check if the object is on the ground and its X-Velocity is not greater than 10
-            if (!(xVelocity > 10) && super.getY() > ground)
+            if (!(xVelocity > 10) && super.getY() > ground && combozo.checkCanMove("heavy"))
             {
+                //Set the current move to walk
+                curMove = "walk";
+                
+                //Set the starting state to neutral
+                combozo.update("neutral");
+                
                 //Variable for if the button was double tapped
                 boolean temp = false;
                 
