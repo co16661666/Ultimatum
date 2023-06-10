@@ -227,6 +227,11 @@ public class Player extends PlayCharacter
             return damage;
     }
     
+    public String getCurMove()
+    {
+        return curMove;
+    }
+    
     /**
      * Updates properties of Player object
      * <p>
