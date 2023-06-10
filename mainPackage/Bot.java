@@ -49,8 +49,8 @@ public class Bot extends Player
     {
         boolean[] moves = new boolean[10];
         
-        //The bot has a chance of attacking the player if they were to get into a range of 30 pixels from them 
-        if (Math.abs(other.getX() - super.getX()) < 30&&random<0.5)
+        //The bot has a chance of attacking the player if they were to get into a range of 300 pixels from them 
+        if (Math.abs(other.getX() - super.getX()) < 300&&random<0.5)
         {
             System.out.println("1");
             move = false;
@@ -61,9 +61,10 @@ public class Bot extends Player
             }
         }
         
-        /**makes the Bot move closer to the player from a count interval of 400 to when count is equal to 500
-         *This will not trigger if the bot is performing an attack
-         *The bot will move to the right until it is within a random range to the player
+        /**
+         * Makes the Bot move closer to the player from a count interval of 400 to when count is equal to 500
+         * This will not trigger if the bot is performing an attack
+         * The bot will move to the right until it is within a random range to the player
          */
         if(other.getX()-super.getX()>((Math.random()*300)+200)&&count>400&&count<500&&move)
         {
@@ -72,8 +73,8 @@ public class Bot extends Player
         }
         
         /**
-         *Also makes the Bot move closer to the Player but for when the Bot is to the left of the Player
-         *The Bot will move the the left until it is within a ranfom range to the player
+         * Also makes the Bot move closer to the Player but for when the Bot is to the left of the Player
+         * The Bot will move the the left until it is within a random range to the player
          */
         if(other.getX()-super.getX()<((Math.random()*-300)+200)&&count>400&&count<500&&move)
         {
@@ -99,8 +100,8 @@ public class Bot extends Player
             random = 0.8;
         }
         /**
-         *If the Bot makes contact with the right boundary, it will cause the Bot to move in the opposite diection for a set amount of frames
-         *the notWall boolean is also set to false which will not update until the update method iterates a few more times.
+         * If the Bot makes contact with the right boundary, it will cause the Bot to move in the opposite diection for a set amount of frames
+         * the notWall boolean is also set to false which will not update until the update method iterates a few more times.
          */
         else if(super.getX()>1130&&move)
         {
@@ -110,17 +111,18 @@ public class Bot extends Player
             random = 0.1;
         }
         /**
-         *Whenver there have been 200 frames which have passed, it assigns a random double to the random variable. 
-         *The method also adds a random value to the count variable
+         * Whenver there have been 200 frames which have passed, it assigns a random double to the random variable. 
+         * The method also adds a random value to the count variable
          */
         if(count == 200)
         {
             random = Math.random();
             count += (Math.random()*100);
         }
+        
         /**
          * This method makes the Bot move a random direction for 100 frames. 
-         *There is a 50% chance the Bot will either move to the right or to the left 
+         * There is a 50% chance the Bot will either move to the right or to the left 
          */
         if(count<300&&count>200&&notWall&&move)
         {
@@ -134,8 +136,8 @@ public class Bot extends Player
             }
         }
         /**
-         *This is used for the special cases of when the Bot makes contact with the wall
-         *The method will force the Bot to move to the opposite diection of the wall instead of a random direction
+         * This is used for the special cases of when the Bot makes contact with the wall
+         * The method will force the Bot to move to the opposite diection of the wall instead of a random direction
          */
         else if(count<300&&count>200&&!notWall&&move)
         {
@@ -155,8 +157,8 @@ public class Bot extends Player
         move = true;
         
         /**
-         *Resets the count variable when count reaches past 600.
-         *This also resets the notWall boolean which checked if the Bot made contact with a boundary.
+         * Resets the count variable when count reaches past 600.
+         * This also resets the notWall boolean which checked if the Bot made contact with a boundary.
          */
         if(!notWall&&count>600)
         {
