@@ -307,8 +307,24 @@ public class Drawer extends JPanel implements KeyListener
         //Draws up the meter of the second healthbar
         g.fillRect(880 + (int) (350 - (sprity.get(2).getHealth() * 350) / 100), 650, (int) (sprity.get(2).getHealth() * 350) / 100, 20);
         
-        //Paints the image so the user can see it, then calls this method again to loop
-        repaint();
-        revalidate();
+        //If statements to determine if the game has ended
+        if (sprity.get(1).getHealth() < 100 && sprity.get(2).getHealth() < 100)
+        {
+            System.out.println("TIE");
+        }
+        else if (sprity.get(1).getHealth() < 100)
+        {
+            System.out.println("YOU LOST EVERYTHING. SUCH IS THE NATURE OF AN ULTIMATUM.");
+        }
+        else if (sprity.get(2).getHealth() < 100)
+        {
+            System.out.println("THE ULTIMATUM WORKED IN YOUR FAVOR. BUT AT WHAT COST?");
+        }
+        else
+        {
+            //Paints the image so the user can see it, then calls this method again to loop
+            repaint();
+            revalidate();
+        }
     }
 }
