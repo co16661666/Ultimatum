@@ -45,11 +45,6 @@ public class Drawer extends JPanel implements KeyListener
     public long frame = 0;
     
     /**
-     * Records a history of all key inputs in the last 60 frames
-     */
-    //public static boolean[][] keyData = new boolean[60][10];
-    
-    /**
      * Array of current key inputs
      */
     private boolean[] keyInputs = new boolean[10];
@@ -200,25 +195,6 @@ public class Drawer extends JPanel implements KeyListener
     {
         sprity.add(x);
     }
-    
-    /**
-     * This method is called every time the screen is updated and updates the key history
-     * <p>
-     * It moves all the previous key inputs "down" one index (e.g. keyData[1] -> keyData[0]) with the oldest set of key inputs (keyData[0]) being discarded and the 59th index (keyData[59]) being set to the current key inputs
-     * @param in The current key inputs
-     */
-    // public static void updateKeyList(boolean[] in)
-    // {
-    //     //For loop to iterate through the array and move the indexes down
-    //     for (int i = 1; i < 60; i++)
-    //     {
-    //         //Sets previous key index to the next index (discards oldest key index)
-    //         keyData[i - 1] = keyData[i];
-    //     }
-        
-    //     //Sets the last index of the array to a *copy* of the latest key inputs to avoid errors with references to the current array
-    //     keyData[59] = Arrays.copyOf(in, 10);
-    // }
     
     /**
      * Getter method for the ArrayList of all PlayCharacters the need to be drawn
