@@ -2,8 +2,6 @@ package mainPackage;
 
 import java.util.*;
 
-import java.util.*;
-
 /**
  * @author      Aryan Patel
  * @version     1.0
@@ -54,7 +52,7 @@ public class Bot extends Player
         {
             move = true;
             
-            if (super.getCurMove().equals("none") || super.getCurMove().equals("walk"))
+            if (super.getCurMove().equals("none") || super.getCurMove().equals("walk") && Math.random() < 0.7)
             {
                 moves[5] = true;
                 move = false;
