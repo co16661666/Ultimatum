@@ -423,14 +423,14 @@ public class Player extends PlayCharacter
                         xVelocity -= 1;
                     }
                 }
-                else if (combozo.checkCanMove("heavy"))
+                else if (curMove.equals("walk"))
                 {
                     //Increases X Velocity by -1
                     xVelocity -= 1;
                 }
             }
         }
-        else if (curMove == "walk")
+        else if (curMove.equals("walk"))
         {
             //Sets current move to none
             curMove = "none";
@@ -481,14 +481,14 @@ public class Player extends PlayCharacter
                         xVelocity += 1;
                     }
                 }
-                else if (combozo.checkCanMove("heavy"))
+                else if (curMove.equals("walk"))
                 {
                     //Increases X Velocity by 1
                     xVelocity += 1;
                 }
             }
         }
-        else if (curMove == "walk")
+        else if (curMove.equals("walk"))
         {
             //Sets current move to none
             curMove = "none";
