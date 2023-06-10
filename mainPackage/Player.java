@@ -423,7 +423,7 @@ public class Player extends PlayCharacter
                         xVelocity -= 1;
                     }
                 }
-                else
+                else if (combozo.checkCanMove("heavy"))
                 {
                     //Increases X Velocity by -1
                     xVelocity -= 1;
@@ -481,7 +481,7 @@ public class Player extends PlayCharacter
                         xVelocity += 1;
                     }
                 }
-                else
+                else if (combozo.checkCanMove("heavy"))
                 {
                     //Increases X Velocity by 1
                     xVelocity += 1;
