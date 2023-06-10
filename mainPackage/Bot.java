@@ -54,7 +54,7 @@ public class Bot extends Player
         {
             move = true;
             
-            if (super.getCurMove().equals("none"))
+            if (super.getCurMove().equals("none") || super.getCurMove().equals("walk"))
             {
                 moves[5] = true;
                 move = false;
