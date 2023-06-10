@@ -50,7 +50,7 @@ public class Bot extends Player
         boolean[] moves = new boolean[10];
         
         //The bot has a chance of attacking the player if they were to get into a range of 300 pixels from them 
-        if (Math.abs(other.getX() - super.getX()) < 300&&random<0.5)
+        if (Math.abs(other.getX() - super.getX()) < 300&&random<0.8)
         {
             System.out.println("1");
             move = false;
