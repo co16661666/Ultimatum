@@ -56,30 +56,22 @@ public class Bot extends Player
             {
                 moves[4] = true;
                 move = false;
-                System.out.println("lp");
             }
             else if (super.getCurMove().equals("none") || super.getCurMove().equals("walk") && Math.random() < 0.1)
             {
                 moves[5] = true;
                 move = false;
-                System.out.println("hp");
             }
             else if (super.getCurMove().equals("none") || super.getCurMove().equals("walk") && Math.random() < 0.15)
             {
                 moves[7] = true;
                 move = false;
-                System.out.println("smack");
             }
             else
             {
-                System.out.println(super.getCurMove());
                 moves[5] = false;
             }
                 
-//             if(count>400){
-//                 System.out.println("2");
-//                 move = true;
-//             }
         }
         
         /**
@@ -174,6 +166,7 @@ public class Bot extends Player
         
         //Increments the count variable which counts the number of frames which have passed
         count++;
+        
         //Resets the boolean move which checks to see if an attack action was performed
         move = true;
         
