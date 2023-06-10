@@ -310,7 +310,7 @@ public class Drawer extends JPanel implements KeyListener
         //If statements to determine if the game has ended
         if (sprity.get(1).getHealth() < 0 && sprity.get(2).getHealth() < 0)
         {
-            System.out.println("TIE: THE REAL VICTORY IS THE FRIENDS WE MADE ALONG THE WAY");
+            System.out.println("TIE: THE REAL VICTORY IS THE FRIENDS WE MADE ALONG THE WAY...");
         }
         else if (sprity.get(1).getHealth() < 0)
         {
