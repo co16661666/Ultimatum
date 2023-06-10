@@ -86,7 +86,6 @@ public class PlayCharacter
         }
         
         this.health = health;
-        System.out.println(x);
         this.x = x;
         this.y = y;
         this.width = width;
