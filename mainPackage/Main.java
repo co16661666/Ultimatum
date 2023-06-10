@@ -1,5 +1,6 @@
 package mainPackage;
 
+import java.util.Scanner;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
