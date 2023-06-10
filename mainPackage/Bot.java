@@ -53,12 +53,12 @@ public class Bot extends Player
         if (Math.abs(other.getX() - super.getX()) < 300/*&&random<0.8*/)
         {
             System.out.println("1");
-            move = false;
+            move = true;
             
             if (!super.isAttacking() || super.getCurMove().equals("none"))
             {
                 moves[5] = true;
-                move = true;
+                move = false;
             }
             else
             {
