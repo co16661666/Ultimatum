@@ -54,7 +54,12 @@ public class Bot extends Player
         {
             System.out.println("1");
             move = false;
-            moves[5] = true;
+            
+            if (!super.isAttacking())
+                moves[5] = true;
+            else
+                moves[5] = false;
+                
             if(count>400){
                 System.out.println("2");
                 move = true;
