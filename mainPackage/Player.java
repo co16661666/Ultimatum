@@ -727,7 +727,7 @@ public class Player extends PlayCharacter
         if(xAttack >= super.getX() + 110 && xAttack <= width1){
             return true;
         }
-        System.out.println(super.getX()+"  "+xAttack+"   " +width1);
+        
         return false; 
     }
     
