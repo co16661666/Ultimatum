@@ -312,13 +312,13 @@ public class Drawer extends JPanel implements KeyListener
         {
             System.out.println("TIE");
         }
-        else if (sprity.get(1).getHealth() < 100)
+        else if (sprity.get(1).getHealth() < 0)
         {
             System.out.println("YOU LOST EVERYTHING. SUCH IS THE NATURE OF AN ULTIMATUM.");
         }
-        else if (sprity.get(2).getHealth() < 100)
+        else if (sprity.get(2).getHealth() < 0)
         {
-            System.out.println("THE ULTIMATUM WORKED IN YOUR FAVOR. BUT AT WHAT COST?");
+            System.out.println("YOU GOT AWAY... THIS TIME");
         }
         else
         {
