@@ -24,7 +24,7 @@ public class Main extends JFrame
         Scanner scan = new Scanner(System.in);
         
         //Instructions for the controls
-        System.out.println("Welcome!!\nControls: Press W to jump, S to crouch, and use A and D to move left and right.\nTo attack, use U to light punch, I to heavy punch, and J to kick. Remember that you must wait for your previous move to finish before your next move can be performed.\nThe bar in the lower left corner is your current health points, while the bar in the lower right is your opponent's health points. The first person to lose all their health points is loser! Good Luck! Press enter to begin.");
+        System.out.println("Welcome!!\nControls: Press W to jump, S to crouch, and use A and D to move left and right.\nTo attack, use U to light punch, I to heavy punch, and J to kick. Remember that you must wait for your previous move to finish before your next move can be performed.\nThe bar in the lower left corner is your current health points, while the bar in the lower right is your opponent's health points. The first person to lose all their health points is loser! Good Luck!\n\nI HAVE BEEN TASKED WITH YOUR DEATH. SURRENDER OR DIE, THIS IS MY ULTIMATUM. [Press ENTER to reject the Ultimatum]");
         
         //Waits until enter is pressed
         scan.nextLine();
