@@ -55,7 +55,7 @@ public class Bot extends Player
             System.out.println("1");
             move = false;
             
-            if (!super.isAttacking() || super.getCurMove().equals(none))
+            if (!super.isAttacking() || super.getCurMove().equals("none"))
                 moves[5] = true;
             else
                 moves[5] = false;
