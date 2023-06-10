@@ -36,8 +36,6 @@ public class Main extends JFrame
             //Creates a Drawer class that has a method that will constantly redraw the screen
             Drawer panel = new Drawer();
             
-            //Character(String name, String imageURL, int health, int x, int y, int width, int height, int frameCountRow, int frameCountCol)
-            
             //creating object for background
             panel.addCharacter(new PlayCharacter("bg", "https://codehs.com/uploads/6f98f64dfec467225d723bae02fe6c0a", 10000000, 0, 0, 1280, 720, 1, 1));
             //creates the character that the user will play
