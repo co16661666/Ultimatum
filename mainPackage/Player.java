@@ -268,7 +268,7 @@ public class Player extends PlayCharacter
             super.setImage(direction, 0);
             
             //Friction if the object is on the ground and no move keys are being pressed
-            if (!keyInputs[1] && !keyInputs[3] && curMove.equals("walk"))
+            if (!keyInputs[1] && !keyInputs[3] && !curMove.equals("walk"))
                 xVelocity /= 3;
         }
         
