@@ -52,16 +52,17 @@ public class Bot extends Player
         //The bot has a chance of attacking the player if they were to get into a range of 300 pixels from them 
         if (Math.abs(other.getX() - super.getX()) < 300/*&&random<0.8*/)
         {
-            System.out.println("1");
             move = true;
             
             if (!super.isAttacking() || super.getCurMove().equals("none"))
             {
                 moves[5] = true;
                 move = false;
+                System.out.println("smack");
             }
             else
             {
+                System.out.println("NO smack");
                 moves[5] = false;
             }
                 
