@@ -62,7 +62,7 @@ public class Bot extends Player
             }
             else
             {
-                System.out.println("NO smack");
+                System.out.println(super.getCurMove());
                 moves[5] = false;
             }
                 
