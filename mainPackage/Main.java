@@ -11,14 +11,17 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * @author      Chinli Ong <chinli.ong@icloud.com>
+ * @author      Chinli Ong <chinli.ong@icloud.com>, Aryan Patel
  * @version     1.0
  * @since       1.0
  */
 public class Main extends JFrame
 {
     private static final long serialVersionUID = 7148504528835036003L;
-    
+    /**
+     * Main method that sets up the game and the graphics
+     * @param args Inputs to the main method
+     */
     public static void main(String[] args) {
         //Instantiates a Scanner object for taking key inputs
         Scanner scan = new Scanner(System.in);
