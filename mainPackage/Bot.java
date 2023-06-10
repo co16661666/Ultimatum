@@ -56,10 +56,14 @@ public class Bot extends Player
             move = false;
             
             if (!super.isAttacking() || super.getCurMove().equals("none"))
+            {
                 moves[5] = true;
                 move = true;
+            }
             else
+            {
                 moves[5] = false;
+            }
                 
 //             if(count>400){
 //                 System.out.println("2");
