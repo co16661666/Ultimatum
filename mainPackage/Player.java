@@ -476,12 +476,12 @@ public class Player extends PlayCharacter
                         xVelocity += 1;
                     }
                 }
+                else if (curMove.equals("walk"))
+                {
+                    //Increases X Velocity by 1
+                    xVelocity += 1;
+                }
             }
-        }
-        else if (curMove.equals("walk"))
-        {
-            //Sets current move to none
-            curMove = "none";
         }
         
         //Checks if image is on the ground
