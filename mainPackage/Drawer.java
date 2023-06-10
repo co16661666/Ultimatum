@@ -308,7 +308,7 @@ public class Drawer extends JPanel implements KeyListener
         g.fillRect(880 + (int) (350 - (sprity.get(2).getHealth() * 350) / 100), 650, (int) (sprity.get(2).getHealth() * 350) / 100, 20);
         
         //If statements to determine if the game has ended
-        if (sprity.get(1).getHealth() < 100 && sprity.get(2).getHealth() < 100)
+        if (sprity.get(1).getHealth() < 0 && sprity.get(2).getHealth() < 0)
         {
             System.out.println("TIE");
         }
