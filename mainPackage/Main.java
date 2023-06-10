@@ -19,6 +19,10 @@ public class Main extends JFrame
     private static final long serialVersionUID = 7148504528835036003L;
     
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Welcome!!\nControls: Press W to jump, S to crouch, and use A and D to move left and right.\nTo attack, use U to light punch, I to heavy punch, and J to kick. Remember that you must wait for your previous move to finish before your next move can be performed.\nThe bar in the lower left corner is your current health points, while the bar in the lower right is your opponent's health points. The first person to lose all their health points is loser! Good Luck! Press enter to begin.");
+        scan.nextLine();
+        
         SwingUtilities.invokeLater(() -> {
             //Creates a Drawer class that has a method that will constantly redraw the screen
             Drawer panel = new Drawer();
