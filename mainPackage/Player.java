@@ -430,11 +430,6 @@ public class Player extends PlayCharacter
                 }
             }
         }
-        else if (curMove.equals("walk") && !combozo.checkCanMove("heavy"))
-        {
-            //Sets current move to none
-            curMove = "none";
-        }
         
         //If crouch button is pressed (s)
         if (keyInputs[2])
@@ -480,11 +475,6 @@ public class Player extends PlayCharacter
                     {
                         xVelocity += 1;
                     }
-                }
-                else if (curMove.equals("walk") && !combozo.checkCanMove("heavy"))
-                {
-                    //Increases X Velocity by 1
-                    xVelocity += 1;
                 }
             }
         }
