@@ -667,7 +667,7 @@ public class Player extends PlayCharacter
             }
             else
             {
-                System.out.println("recovery: " + 8 - (curMoveStage / 2));
+                System.out.println("recovery: " + (8 - (curMoveStage / 2)));
                 //Changes image based on stage
                 super.setImage(direction + 2, 8 - (curMoveStage / 2));
                 
