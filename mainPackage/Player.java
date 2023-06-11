@@ -643,6 +643,7 @@ public class Player extends PlayCharacter
             //Checks if the move is in startup, active, or recovery state
             if (curMoveStage < 8)
             {
+                System.out.println("startup: " + curMoveStage);
                 //Change the image based on stage
                 super.setImage(direction + 2, curMoveStage / 2);
                 
@@ -654,6 +655,7 @@ public class Player extends PlayCharacter
             }
             else if (curMoveStage < 12)
             {
+                System.out.println("active: " + curMoveStage);
                 //Sets image to fully extended kick
                 super.setImage(direction + 3, 0);
                 
@@ -665,6 +667,7 @@ public class Player extends PlayCharacter
             }
             else
             {
+                System.out.println("recovery: " + curMoveStage);
                 //Changes image based on stage
                 super.setImage(direction + 2, 8 - (curMoveStage / 2));
                 
