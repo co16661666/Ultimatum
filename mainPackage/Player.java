@@ -519,10 +519,8 @@ public class Player extends PlayCharacter
             {
                 //Change the image based on stage
                 super.setImage(direction, curMoveStage);
-                
                 //Sets the state to startup
                 combozo.update("startup");
-                
                 //Sets attacking to false (not attacking yet)
                 attacking = false;
             }
@@ -530,10 +528,8 @@ public class Player extends PlayCharacter
             {
                 //Sets image to fully extended jab arm
                 super.setImage(direction, 3);
-                
                 //Sets state to active
                 combozo.update("active");
-                
                 //Sets attacking to true
                 attacking = true;
             }
@@ -541,10 +537,8 @@ public class Player extends PlayCharacter
             {
                 //Changes image based on stage
                 super.setImage(direction, 8 - curMoveStage);
-                
                 //Sets the state to recovery
                 combozo.update("recovery");
-                
                 //Sets the attacking to false (recovering from attack)
                 attacking = false;
             }
